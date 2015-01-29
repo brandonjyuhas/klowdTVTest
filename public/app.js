@@ -165,10 +165,8 @@ $('document').ready(function(){
           if (this.activeStation === data[j]["stationId"]){
             $('.programs').eq(j).addClass('active');
           }
-          console.log(this.inArray(data[j]["stationId"].toString(), this.userIds));
           if (this.inArray(data[j]["stationId"].toString(), this.userIds)){
             $('.programs').eq(j).removeClass('inactive');
-            console.log("twas true");
           }
           airings = data[j]["airings"];
 
@@ -191,8 +189,16 @@ $('document').ready(function(){
               program = airings[i];
 
               // Handle finding all info here, and then push into one string that you'll append
+              console.log(program["program"]["title"]);
+              console.log(program["program"]["shortDescription"]);
+
+
+
               episodeTitle = this.isUndefined(program["program"]["episodeTitle"]);
-              shortDescription = this.isUndefined(program["program"]["shortDescription"]).replace(/'/g,"").replace(/"/g,"");
+              shortDescription = this.isUndefined(program["program"]["shortDescription"]).replace(/"/g,"'");
+
+              console.log(shortDescription);
+              console.log(" ");
 
               cast = "";
 
@@ -225,16 +231,16 @@ $('document').ready(function(){
               }
 
               if(program["duration"] > 0){
-                $('.programs').eq(j).append("<li class='tooltip' title='&lt;h2&gt;"
+                $('.programs').eq(j).append("<li class='tooltip' title=\"&lt;h2&gt;"
                   + (program["program"]["title"])
                   + "&lt;/h2&gt; &lt;h3&gt;"
                   + episodeTitle
                   + "&lt;/h3&gt; &lt;p&gt;"
-                  + shortDescription.replace(/'/g,"").replace(/"/g,"")
+                  + shortDescription
                   + " &lt;/p&gt; &lt;/br&gt; "
                   + cast
                   + button
-                  + "' class='tooltip'>"
+                  + "\" class='tooltip'>"
                   + program["program"]["title"]
                   + "</li>");
                 currentProgram = $('.programs li').last();
@@ -308,22 +314,16 @@ $('document').ready(function(){
         if ($(this).data("executing")) return;
 
         $('#programGuide').empty();
-        console.log(time);
         time = klowd.addTimeBlock(time);
-        console.log(time);
-        console.log(new Date(time));
         klowd.setEPG(time);
       });
 
       $('#previous').on('click', function(){
         if ($(this).data("executing")){
-          console.log("Caught!");
           return;
         }
         $('#programGuide').empty();
-        console.log(time);
         time = klowd.removeTimeBlock(time);
-        console.log(time);
         klowd.setEPG(time);
       });
     },
