@@ -104,7 +104,7 @@ $('document').ready(function(){
 
   var klowdEPG = {
 
-    activeStation: "11450",
+    activeStation: "23321",
     apikey: "umstwy76p8shpfkxhugr6a2v",
     baseUrl: "http://data.tmsapi.com/v1/lineups/USA-DC01098-X/grid",
     zipcode: "20002",
@@ -120,10 +120,20 @@ $('document').ready(function(){
       }
     },
 
+    inArray: function(value, array){
+      contains = false;
+      for(var i = 0; i < array.length; i++){
+        if(array[i] == value){
+          contains = true;
+        }
+      }
+      return contains;
+    },
 
 
     // endTime: new Date(new Date(new Date().setHours(new Date().getHours() + 1)).setMinutes(new Date().getMinutes() + 30)).toISOString().substr(0,16) + "+05:00",
-    stationIds: "11069,23321,11450",
+    stationIds: [11069,23321,11450,10051,10035,10057,11163],
+    userIds: [11069,23321,10051,11163],
 
 
     // Hours Messed Up Due to TimeZone
@@ -151,9 +161,14 @@ $('document').ready(function(){
 
     fillEPG: function(data, today){
         for(var j = 0; j < data.length; j++){
-          $('#programGuide').append("<div class='grid grid-pad'><div class='col-1-12'><div class='content'><img src='/images/" + data[j]["stationId"] + ".png' class='height-15-percent' /></div></div><div class='col-11-12'><div class='content'><ul class='programs' channel-id='" + data[j]["stationId"] + "'></ul></div></div></div>");
+          $('#programGuide').append("<div class='grid grid-pad'><div class='col-2-12'><div class='content'><img src='/images/" + data[j]["stationId"] + ".png' class='height-15-percent' /></div></div><div class='col-10-12'><div class='content'><ul class='programs inactive' channel-id='" + data[j]["stationId"] + "'></ul></div></div></div>");
           if (this.activeStation === data[j]["stationId"]){
             $('.programs').eq(j).addClass('active');
+          }
+          console.log(this.inArray(data[j]["stationId"].toString(), this.userIds));
+          if (this.inArray(data[j]["stationId"].toString(), this.userIds)){
+            $('.programs').eq(j).removeClass('inactive');
+            console.log("twas true");
           }
           airings = data[j]["airings"];
 
@@ -174,16 +189,52 @@ $('document').ready(function(){
                 program["duration"] = durationLeft;
               }
               program = airings[i];
-              if(program["duration"] > 0){
-                $('.programs').eq(j).append("<li title='&lt;h2&gt;"
-                  + (program["program"]["title"])
-                  + "&lt;/h2&gt; &lt;p&gt; &lt;h3&gt;"
-                  + this.isUndefined(program["program"]["episodeTitle"])
-                  + "&lt;/h3&gt;"
-                  + this.isUndefined(program["program"]["shortDescription"]).replace(/'/g,"").replace(/"/g,"")
-                  + " &lt;/p&gt; &lt;/br&gt; &lt;button class=&quot;change-channel&quot; channel-id=&quot;"
+
+              // Handle finding all info here, and then push into one string that you'll append
+              episodeTitle = this.isUndefined(program["program"]["episodeTitle"]);
+              shortDescription = this.isUndefined(program["program"]["shortDescription"]).replace(/'/g,"").replace(/"/g,"");
+
+              cast = "";
+
+
+
+              if(data[j]["stationId"] === this.activeStation) {
+                button = "";
+              }
+              else if(this.inArray(data[j]["stationId"].toString(), this.userIds)){
+                  button = "&lt;button class=&quot;change-channel&quot; channel-id=&quot;"
                   + data[j]["stationId"]
-                  + "&quot; &gt; Switch to Channel &lt;/button &gt;' class='tooltip'>"
+                  + "&quot; &gt; Switch to Channel &lt;/button&gt;"
+              }
+              else {
+                button = "&lt;button class=&quot;purchase&quot; channel-id=&quot;"
+                  + data[j]["stationId"]
+                  + "&quot; &gt; Purchase Channel &lt;/button&gt;"
+              }
+
+              if (program["program"]["topCast"]){
+                cast += "&lt;ul&gt;"
+                for (var actor = 0; actor < program["program"]["topCast"].length; actor++){
+                  cast += "&lt;li&gt;" + program["program"]["topCast"][actor] + "&lt;/li&gt;"
+                }
+                cast += "&lt;/ul&gt;"
+              }
+
+              if (program["duration"] < 5) {
+                program["duration"] = 0;
+              }
+
+              if(program["duration"] > 0){
+                $('.programs').eq(j).append("<li class='tooltip' title='&lt;h2&gt;"
+                  + (program["program"]["title"])
+                  + "&lt;/h2&gt; &lt;h3&gt;"
+                  + episodeTitle
+                  + "&lt;/h3&gt; &lt;p&gt;"
+                  + shortDescription.replace(/'/g,"").replace(/"/g,"")
+                  + " &lt;/p&gt; &lt;/br&gt; "
+                  + cast
+                  + button
+                  + "' class='tooltip'>"
                   + program["program"]["title"]
                   + "</li>");
                 currentProgram = $('.programs li').last();
@@ -207,7 +258,7 @@ $('document').ready(function(){
       time = new Date(time);
       time = new Date(time.setHours(time.getHours() + 2));
       time = new Date(time.setMinutes(time.getMinutes() + 30));
-      $('.date').text(time);
+      $('.date').text(time.toString().substr(0,15));
       return this.findCorrectISOTime(time);
     },
 
@@ -215,7 +266,7 @@ $('document').ready(function(){
       time = new Date(time);
       time = new Date(time.setHours(time.getHours() - 2));
       time = new Date(time.setMinutes(time.getMinutes() - 30));
-      $('.date').text(time);
+      $('.date').text(time.toString().substr(0,15));
       return this.findCorrectISOTime(time);
     },
 
@@ -249,7 +300,7 @@ $('document').ready(function(){
 
     init: function(){
       klowd = this;
-      $('.date').text(new Date());
+      $('.date').text(new Date().toString().substr(0,15));
       time = klowd.findCorrectISOTime(new Date());
       klowd.setEPG(time);
 
@@ -298,7 +349,7 @@ $('document').ready(function(){
         $.ajax({
         url: klowd.baseUrl,
         data: {
-          stationId: klowd.stationIds,
+          stationId: klowd.stationIds.toString(),
           startDateTime: today,
           // endDateTime: this.endDateTime,
           // jsonp: "dataHandler",
