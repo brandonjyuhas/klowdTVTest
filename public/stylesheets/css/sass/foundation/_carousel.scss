@@ -1,0 +1,24 @@
+/* 
+    Created on : Aug 17, 2014, 9:59:48 PM
+    Author     : mikejecko
+*/
+
+@import "foundation/colors";
+
+.t-carousel-container-fade {
+    
+    clear: both;
+    margin: 1em 0;
+    padding: 0.5em 0 0;
+    position: relative;
+    
+    .t-carousel-item {
+        
+        float: left;
+        display: block;
+        margin-left: 1em;
+        margin-right: 1em;
+        
+    }
+}
+

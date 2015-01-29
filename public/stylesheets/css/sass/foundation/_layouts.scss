@@ -1,0 +1,973 @@
+/* 
+    Created on : Jul 27, 2014, 2:15:21 PM
+    Author     : mikejecko
+*/
+
+/*
+
+    This is where the different column width classes are defined.
+    The number of columns an element will span per breakpoint is defined here.
+    For example: 1-ml-col-4
+    
+    For the last column, specifiy the breakpoint and last column.
+    For example: 1-ml-col-4 l-ml-col-last
+
+    Only up to two levels: parent and child.
+    For example:
+    l-ml-col-4
+        l-ml-col-2 l-ml-col-last
+*/
+
+@import "susyone";
+@import "foundation/breakpoints";
+@import "foundation/utilities";
+
+@include border-box-sizing;
+
+@include breakpoint(XS) {
+    $tshirt: xs;
+    $cols: 4;
+    .l-container { @include container; }
+    @include createPlaceholders($tshirt, $cols);
+    
+    .l-#{$tshirt}-col-1 { @extend %#{$tshirt}1; }
+    .l-#{$tshirt}-col-2 { @extend %#{$tshirt}2; }
+    .l-#{$tshirt}-col-3 { @extend %#{$tshirt}3; }
+    .l-#{$tshirt}-col-4 { @extend %#{$tshirt}4; }
+    .l-#{$tshirt}-col-last { @extend %#{$tshirt}last; }
+    
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}2-sub1; }
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-last { @extend %#{$tshirt}2-sublast; }
+    
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}3-sub1; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}3-sub2; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-last { @extend %#{$tshirt}3-sublast; }
+    
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}4-sub1; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}4-sub2; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}4-sub3; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-last { @extend %#{$tshirt}4-sublast; }
+}
+@include breakpoint(S) {
+    $tshirt: s;
+    $cols: 4;
+    .l-container { @include container; }
+    @include createPlaceholders($tshirt, $cols);
+    
+    .l-#{$tshirt}-col-1 { @extend %#{$tshirt}1; }
+    .l-#{$tshirt}-col-2 { @extend %#{$tshirt}2; }
+    .l-#{$tshirt}-col-3 { @extend %#{$tshirt}3; }
+    .l-#{$tshirt}-col-4 { @extend %#{$tshirt}4; }
+    .l-#{$tshirt}-col-last { @extend %#{$tshirt}last; }
+    
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}2-sub1; }
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-last { @extend %#{$tshirt}2-sublast; }
+    
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}3-sub1; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}3-sub2; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-last { @extend %#{$tshirt}3-sublast; }
+    
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}4-sub1; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}4-sub2; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}4-sub3; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-last { @extend %#{$tshirt}4-sublast; }
+}
+@include breakpoint(SM) {
+    $tshirt: sm;
+    $cols: 6;
+    .l-container { @include container; }
+    @include createPlaceholders($tshirt, $cols);
+    
+    .l-#{$tshirt}-col-1 { @extend %#{$tshirt}1; }
+    .l-#{$tshirt}-col-2 { @extend %#{$tshirt}2; }
+    .l-#{$tshirt}-col-3 { @extend %#{$tshirt}3; }
+    .l-#{$tshirt}-col-4 { @extend %#{$tshirt}4; }
+    .l-#{$tshirt}-col-5 { @extend %#{$tshirt}5; }
+    .l-#{$tshirt}-col-6 { @extend %#{$tshirt}6; }
+    .l-#{$tshirt}-col-last { @extend %#{$tshirt}last; }
+    
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}2-sub1; }
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-last { @extend %#{$tshirt}2-sublast; }
+    
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}3-sub1; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}3-sub2; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-last { @extend %#{$tshirt}3-sublast; }
+    
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}4-sub1; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}4-sub2; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}4-sub3; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-last { @extend %#{$tshirt}4-sublast; }
+    
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}5-sub1; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}5-sub2; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}5-sub3; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}5-sub4; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-last { @extend %#{$tshirt}5-sublast; }
+    
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}6-sub1; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}6-sub2; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}6-sub3; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}6-sub4; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}6-sub5; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-last { @extend %#{$tshirt}6-sublast; }
+}
+@include breakpoint(M) {
+    $tshirt: m;
+    $cols: 6;
+    .l-container { @include container; }
+    @include createPlaceholders($tshirt, $cols);
+    
+    .l-#{$tshirt}-col-1 { @extend %#{$tshirt}1; }
+    .l-#{$tshirt}-col-2 { @extend %#{$tshirt}2; }
+    .l-#{$tshirt}-col-3 { @extend %#{$tshirt}3; }
+    .l-#{$tshirt}-col-4 { @extend %#{$tshirt}4; }
+    .l-#{$tshirt}-col-5 { @extend %#{$tshirt}5; }
+    .l-#{$tshirt}-col-6 { @extend %#{$tshirt}6; }
+    .l-#{$tshirt}-col-last { @extend %#{$tshirt}last; }
+    
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}2-sub1; }
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-last { @extend %#{$tshirt}2-sublast; }
+    
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}3-sub1; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}3-sub2; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-last { @extend %#{$tshirt}3-sublast; }
+    
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}4-sub1; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}4-sub2; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}4-sub3; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-last { @extend %#{$tshirt}4-sublast; }
+    
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}5-sub1; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}5-sub2; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}5-sub3; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}5-sub4; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-last { @extend %#{$tshirt}5-sublast; }
+    
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}6-sub1; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}6-sub2; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}6-sub3; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}6-sub4; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}6-sub5; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-last { @extend %#{$tshirt}6-sublast; }
+}
+@include breakpoint(MML) {
+    $tshirt: mml;
+    $cols: 9;
+    .l-container { @include container; }
+    @include createPlaceholders($tshirt, $cols);
+    
+    .l-#{$tshirt}-col-1 { @extend %#{$tshirt}1; }
+    .l-#{$tshirt}-col-2 { @extend %#{$tshirt}2; }
+    .l-#{$tshirt}-col-3 { @extend %#{$tshirt}3; }
+    .l-#{$tshirt}-col-4 { @extend %#{$tshirt}4; }
+    .l-#{$tshirt}-col-5 { @extend %#{$tshirt}5; }
+    .l-#{$tshirt}-col-6 { @extend %#{$tshirt}6; }
+    .l-#{$tshirt}-col-7 { @extend %#{$tshirt}7; }
+    .l-#{$tshirt}-col-8 { @extend %#{$tshirt}8; }
+    .l-#{$tshirt}-col-9 { @extend %#{$tshirt}9; }
+    .l-#{$tshirt}-col-last { @extend %#{$tshirt}last; }
+    
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}2-sub1; }
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-last { @extend %#{$tshirt}2-sublast; }
+    
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}3-sub1; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}3-sub2; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-last { @extend %#{$tshirt}3-sublast; }
+    
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}4-sub1; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}4-sub2; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}4-sub3; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-last { @extend %#{$tshirt}4-sublast; }
+    
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}5-sub1; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}5-sub2; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}5-sub3; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}5-sub4; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-last { @extend %#{$tshirt}5-sublast; }
+    
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}6-sub1; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}6-sub2; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}6-sub3; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}6-sub4; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}6-sub5; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-last { @extend %#{$tshirt}6-sublast; }
+    
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}7-sub1; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}7-sub2; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}7-sub3; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}7-sub4; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}7-sub5; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}7-sub6; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-last { @extend %#{$tshirt}7-sublast; }
+    
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}8-sub1; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}8-sub2; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}8-sub3; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}8-sub4; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}8-sub5; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}8-sub6; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}8-sub7; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-last { @extend %#{$tshirt}8-sublast; }
+    
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}9-sub1; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}9-sub2; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}9-sub3; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}9-sub4; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}9-sub5; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}9-sub6; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}9-sub7; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}9-sub8; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-last { @extend %#{$tshirt}9-sublast; }
+}
+@include breakpoint(ML) {
+    $tshirt: ml;
+    $cols: 12;
+    .l-container { @include container; }
+    @include createPlaceholders($tshirt, $cols);
+    
+    .l-#{$tshirt}-col-1 { @extend %#{$tshirt}1; }
+    .l-#{$tshirt}-col-2 { @extend %#{$tshirt}2; }
+    .l-#{$tshirt}-col-3 { @extend %#{$tshirt}3; }
+    .l-#{$tshirt}-col-4 { @extend %#{$tshirt}4; }
+    .l-#{$tshirt}-col-5 { @extend %#{$tshirt}5; }
+    .l-#{$tshirt}-col-6 { @extend %#{$tshirt}6; }
+    .l-#{$tshirt}-col-7 { @extend %#{$tshirt}7; }
+    .l-#{$tshirt}-col-8 { @extend %#{$tshirt}8; }
+    .l-#{$tshirt}-col-9 { @extend %#{$tshirt}9; }
+    .l-#{$tshirt}-col-last { @extend %#{$tshirt}last; }
+    
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}2-sub1; }
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-last { @extend %#{$tshirt}2-sublast; }
+    
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}3-sub1; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}3-sub2; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-last { @extend %#{$tshirt}3-sublast; }
+    
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}4-sub1; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}4-sub2; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}4-sub3; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-last { @extend %#{$tshirt}4-sublast; }
+    
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}5-sub1; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}5-sub2; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}5-sub3; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}5-sub4; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-last { @extend %#{$tshirt}5-sublast; }
+    
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}6-sub1; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}6-sub2; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}6-sub3; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}6-sub4; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}6-sub5; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-last { @extend %#{$tshirt}6-sublast; }
+    
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}7-sub1; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}7-sub2; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}7-sub3; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}7-sub4; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}7-sub5; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}7-sub6; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-last { @extend %#{$tshirt}7-sublast; }
+    
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}8-sub1; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}8-sub2; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}8-sub3; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}8-sub4; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}8-sub5; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}8-sub6; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}8-sub7; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-last { @extend %#{$tshirt}8-sublast; }
+    
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}9-sub1; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}9-sub2; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}9-sub3; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}9-sub4; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}9-sub5; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}9-sub6; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}9-sub7; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}9-sub8; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-last { @extend %#{$tshirt}9-sublast; }
+    
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}10-sub1; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}10-sub2; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}10-sub3; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}10-sub4; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}10-sub5; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}10-sub6; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}10-sub7; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}10-sub8; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-9 { @extend %#{$tshirt}10-sub9; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-last { @extend %#{$tshirt}10-sublast; }
+    
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}11-sub1; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}11-sub2; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}11-sub3; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}11-sub4; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}11-sub5; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}11-sub6; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}11-sub7; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}11-sub8; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-9 { @extend %#{$tshirt}11-sub9; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-10 { @extend %#{$tshirt}11-sub10; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-last { @extend %#{$tshirt}11-sublast; }
+    
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}12-sub1; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}12-sub2; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}12-sub3; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}12-sub4; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}12-sub5; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}12-sub6; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}12-sub7; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}12-sub8; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-9 { @extend %#{$tshirt}12-sub9; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-10 { @extend %#{$tshirt}12-sub10; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-11 { @extend %#{$tshirt}12-sub11; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-last { @extend %#{$tshirt}12-sublast; }
+}
+@include breakpoint(MLL) {
+    $tshirt: mll;
+    $cols: 12;
+    .l-container { @include container; }
+    @include createPlaceholders($tshirt, $cols);
+    
+    .l-#{$tshirt}-col-1 { @extend %#{$tshirt}1; }
+    .l-#{$tshirt}-col-2 { @extend %#{$tshirt}2; }
+    .l-#{$tshirt}-col-3 { @extend %#{$tshirt}3; }
+    .l-#{$tshirt}-col-4 { @extend %#{$tshirt}4; }
+    .l-#{$tshirt}-col-5 { @extend %#{$tshirt}5; }
+    .l-#{$tshirt}-col-6 { @extend %#{$tshirt}6; }
+    .l-#{$tshirt}-col-7 { @extend %#{$tshirt}7; }
+    .l-#{$tshirt}-col-8 { @extend %#{$tshirt}8; }
+    .l-#{$tshirt}-col-9 { @extend %#{$tshirt}9; }
+    .l-#{$tshirt}-col-last { @extend %#{$tshirt}last; }
+    
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}2-sub1; }
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-last { @extend %#{$tshirt}2-sublast; }
+    
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}3-sub1; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}3-sub2; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-last { @extend %#{$tshirt}3-sublast; }
+    
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}4-sub1; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}4-sub2; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}4-sub3; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-last { @extend %#{$tshirt}4-sublast; }
+    
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}5-sub1; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}5-sub2; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}5-sub3; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}5-sub4; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-last { @extend %#{$tshirt}5-sublast; }
+    
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}6-sub1; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}6-sub2; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}6-sub3; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}6-sub4; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}6-sub5; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-last { @extend %#{$tshirt}6-sublast; }
+    
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}7-sub1; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}7-sub2; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}7-sub3; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}7-sub4; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}7-sub5; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}7-sub6; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-last { @extend %#{$tshirt}7-sublast; }
+    
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}8-sub1; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}8-sub2; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}8-sub3; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}8-sub4; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}8-sub5; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}8-sub6; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}8-sub7; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-last { @extend %#{$tshirt}8-sublast; }
+    
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}9-sub1; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}9-sub2; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}9-sub3; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}9-sub4; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}9-sub5; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}9-sub6; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}9-sub7; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}9-sub8; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-last { @extend %#{$tshirt}9-sublast; }
+    
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}10-sub1; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}10-sub2; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}10-sub3; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}10-sub4; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}10-sub5; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}10-sub6; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}10-sub7; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}10-sub8; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-9 { @extend %#{$tshirt}10-sub9; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-last { @extend %#{$tshirt}10-sublast; }
+    
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}11-sub1; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}11-sub2; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}11-sub3; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}11-sub4; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}11-sub5; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}11-sub6; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}11-sub7; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}11-sub8; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-9 { @extend %#{$tshirt}11-sub9; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-10 { @extend %#{$tshirt}11-sub10; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-last { @extend %#{$tshirt}11-sublast; }
+    
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}12-sub1; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}12-sub2; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}12-sub3; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}12-sub4; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}12-sub5; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}12-sub6; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}12-sub7; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}12-sub8; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-9 { @extend %#{$tshirt}12-sub9; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-10 { @extend %#{$tshirt}12-sub10; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-11 { @extend %#{$tshirt}12-sub11; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-last { @extend %#{$tshirt}12-sublast; }
+}
+@include breakpoint(L) {
+    $tshirt: l;
+    $cols: 12;
+    .l-container { @include container; }
+    @include createPlaceholders($tshirt, $cols);
+    
+    .l-#{$tshirt}-col-1 { @extend %#{$tshirt}1; }
+    .l-#{$tshirt}-col-2 { @extend %#{$tshirt}2; }
+    .l-#{$tshirt}-col-3 { @extend %#{$tshirt}3; }
+    .l-#{$tshirt}-col-4 { @extend %#{$tshirt}4; }
+    .l-#{$tshirt}-col-5 { @extend %#{$tshirt}5; }
+    .l-#{$tshirt}-col-6 { @extend %#{$tshirt}6; }
+    .l-#{$tshirt}-col-7 { @extend %#{$tshirt}7; }
+    .l-#{$tshirt}-col-8 { @extend %#{$tshirt}8; }
+    .l-#{$tshirt}-col-9 { @extend %#{$tshirt}9; }
+    .l-#{$tshirt}-col-last { @extend %#{$tshirt}last; }
+    
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}2-sub1; }
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-last { @extend %#{$tshirt}2-sublast; }
+    
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}3-sub1; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}3-sub2; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-last { @extend %#{$tshirt}3-sublast; }
+    
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}4-sub1; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}4-sub2; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}4-sub3; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-last { @extend %#{$tshirt}4-sublast; }
+    
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}5-sub1; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}5-sub2; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}5-sub3; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}5-sub4; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-last { @extend %#{$tshirt}5-sublast; }
+    
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}6-sub1; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}6-sub2; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}6-sub3; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}6-sub4; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}6-sub5; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-last { @extend %#{$tshirt}6-sublast; }
+    
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}7-sub1; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}7-sub2; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}7-sub3; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}7-sub4; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}7-sub5; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}7-sub6; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-last { @extend %#{$tshirt}7-sublast; }
+    
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}8-sub1; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}8-sub2; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}8-sub3; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}8-sub4; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}8-sub5; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}8-sub6; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}8-sub7; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-last { @extend %#{$tshirt}8-sublast; }
+    
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}9-sub1; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}9-sub2; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}9-sub3; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}9-sub4; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}9-sub5; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}9-sub6; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}9-sub7; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}9-sub8; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-last { @extend %#{$tshirt}9-sublast; }
+    
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}10-sub1; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}10-sub2; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}10-sub3; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}10-sub4; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}10-sub5; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}10-sub6; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}10-sub7; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}10-sub8; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-9 { @extend %#{$tshirt}10-sub9; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-last { @extend %#{$tshirt}10-sublast; }
+    
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}11-sub1; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}11-sub2; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}11-sub3; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}11-sub4; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}11-sub5; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}11-sub6; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}11-sub7; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}11-sub8; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-9 { @extend %#{$tshirt}11-sub9; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-10 { @extend %#{$tshirt}11-sub10; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-last { @extend %#{$tshirt}11-sublast; }
+    
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}12-sub1; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}12-sub2; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}12-sub3; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}12-sub4; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}12-sub5; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}12-sub6; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}12-sub7; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}12-sub8; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-9 { @extend %#{$tshirt}12-sub9; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-10 { @extend %#{$tshirt}12-sub10; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-11 { @extend %#{$tshirt}12-sub11; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-last { @extend %#{$tshirt}12-sublast; }
+}
+@include breakpoint(XL) {
+    $tshirt: xl;
+    $cols: 12;
+    .l-container { @include container; }
+    @include createPlaceholders($tshirt, $cols);
+    
+    .l-#{$tshirt}-col-1 { @extend %#{$tshirt}1; }
+    .l-#{$tshirt}-col-2 { @extend %#{$tshirt}2; }
+    .l-#{$tshirt}-col-3 { @extend %#{$tshirt}3; }
+    .l-#{$tshirt}-col-4 { @extend %#{$tshirt}4; }
+    .l-#{$tshirt}-col-5 { @extend %#{$tshirt}5; }
+    .l-#{$tshirt}-col-6 { @extend %#{$tshirt}6; }
+    .l-#{$tshirt}-col-7 { @extend %#{$tshirt}7; }
+    .l-#{$tshirt}-col-8 { @extend %#{$tshirt}8; }
+    .l-#{$tshirt}-col-9 { @extend %#{$tshirt}9; }
+    .l-#{$tshirt}-col-last { @extend %#{$tshirt}last; }
+    
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}2-sub1; }
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-last { @extend %#{$tshirt}2-sublast; }
+    
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}3-sub1; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}3-sub2; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-last { @extend %#{$tshirt}3-sublast; }
+    
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}4-sub1; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}4-sub2; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}4-sub3; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-last { @extend %#{$tshirt}4-sublast; }
+    
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}5-sub1; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}5-sub2; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}5-sub3; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}5-sub4; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-last { @extend %#{$tshirt}5-sublast; }
+    
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}6-sub1; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}6-sub2; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}6-sub3; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}6-sub4; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}6-sub5; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-last { @extend %#{$tshirt}6-sublast; }
+    
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}7-sub1; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}7-sub2; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}7-sub3; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}7-sub4; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}7-sub5; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}7-sub6; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-last { @extend %#{$tshirt}7-sublast; }
+    
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}8-sub1; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}8-sub2; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}8-sub3; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}8-sub4; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}8-sub5; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}8-sub6; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}8-sub7; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-last { @extend %#{$tshirt}8-sublast; }
+    
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}9-sub1; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}9-sub2; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}9-sub3; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}9-sub4; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}9-sub5; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}9-sub6; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}9-sub7; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}9-sub8; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-last { @extend %#{$tshirt}9-sublast; }
+    
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}10-sub1; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}10-sub2; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}10-sub3; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}10-sub4; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}10-sub5; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}10-sub6; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}10-sub7; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}10-sub8; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-9 { @extend %#{$tshirt}10-sub9; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-last { @extend %#{$tshirt}10-sublast; }
+    
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}11-sub1; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}11-sub2; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}11-sub3; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}11-sub4; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}11-sub5; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}11-sub6; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}11-sub7; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}11-sub8; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-9 { @extend %#{$tshirt}11-sub9; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-10 { @extend %#{$tshirt}11-sub10; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-last { @extend %#{$tshirt}11-sublast; }
+    
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}12-sub1; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}12-sub2; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}12-sub3; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}12-sub4; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}12-sub5; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}12-sub6; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}12-sub7; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}12-sub8; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-9 { @extend %#{$tshirt}12-sub9; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-10 { @extend %#{$tshirt}12-sub10; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-11 { @extend %#{$tshirt}12-sub11; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-last { @extend %#{$tshirt}12-sublast; }
+}
+@include breakpoint(XXL) {
+    $tshirt: xxl;
+    $cols: 12;
+    .l-container { @include container; }
+    @include createPlaceholders($tshirt, $cols);
+    
+    .l-#{$tshirt}-col-1 { @extend %#{$tshirt}1; }
+    .l-#{$tshirt}-col-2 { @extend %#{$tshirt}2; }
+    .l-#{$tshirt}-col-3 { @extend %#{$tshirt}3; }
+    .l-#{$tshirt}-col-4 { @extend %#{$tshirt}4; }
+    .l-#{$tshirt}-col-5 { @extend %#{$tshirt}5; }
+    .l-#{$tshirt}-col-6 { @extend %#{$tshirt}6; }
+    .l-#{$tshirt}-col-7 { @extend %#{$tshirt}7; }
+    .l-#{$tshirt}-col-8 { @extend %#{$tshirt}8; }
+    .l-#{$tshirt}-col-9 { @extend %#{$tshirt}9; }
+    .l-#{$tshirt}-col-last { @extend %#{$tshirt}last; }
+    
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}2-sub1; }
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-last { @extend %#{$tshirt}2-sublast; }
+    
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}3-sub1; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}3-sub2; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-last { @extend %#{$tshirt}3-sublast; }
+    
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}4-sub1; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}4-sub2; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}4-sub3; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-last { @extend %#{$tshirt}4-sublast; }
+    
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}5-sub1; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}5-sub2; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}5-sub3; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}5-sub4; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-last { @extend %#{$tshirt}5-sublast; }
+    
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}6-sub1; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}6-sub2; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}6-sub3; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}6-sub4; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}6-sub5; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-last { @extend %#{$tshirt}6-sublast; }
+    
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}7-sub1; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}7-sub2; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}7-sub3; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}7-sub4; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}7-sub5; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}7-sub6; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-last { @extend %#{$tshirt}7-sublast; }
+    
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}8-sub1; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}8-sub2; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}8-sub3; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}8-sub4; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}8-sub5; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}8-sub6; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}8-sub7; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-last { @extend %#{$tshirt}8-sublast; }
+    
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}9-sub1; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}9-sub2; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}9-sub3; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}9-sub4; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}9-sub5; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}9-sub6; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}9-sub7; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}9-sub8; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-last { @extend %#{$tshirt}9-sublast; }
+    
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}10-sub1; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}10-sub2; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}10-sub3; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}10-sub4; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}10-sub5; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}10-sub6; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}10-sub7; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}10-sub8; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-9 { @extend %#{$tshirt}10-sub9; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-last { @extend %#{$tshirt}10-sublast; }
+    
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}11-sub1; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}11-sub2; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}11-sub3; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}11-sub4; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}11-sub5; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}11-sub6; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}11-sub7; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}11-sub8; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-9 { @extend %#{$tshirt}11-sub9; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-10 { @extend %#{$tshirt}11-sub10; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-last { @extend %#{$tshirt}11-sublast; }
+    
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}12-sub1; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}12-sub2; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}12-sub3; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}12-sub4; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}12-sub5; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}12-sub6; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}12-sub7; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}12-sub8; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-9 { @extend %#{$tshirt}12-sub9; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-10 { @extend %#{$tshirt}12-sub10; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-11 { @extend %#{$tshirt}12-sub11; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-last { @extend %#{$tshirt}12-sublast; }
+}
+@include breakpoint(XXXL) {
+    $tshirt: xxxl;
+    $cols: 12;
+    .l-container { @include container; }
+    @include createPlaceholders($tshirt, $cols);
+    
+    .l-#{$tshirt}-col-1 { @extend %#{$tshirt}1; }
+    .l-#{$tshirt}-col-2 { @extend %#{$tshirt}2; }
+    .l-#{$tshirt}-col-3 { @extend %#{$tshirt}3; }
+    .l-#{$tshirt}-col-4 { @extend %#{$tshirt}4; }
+    .l-#{$tshirt}-col-5 { @extend %#{$tshirt}5; }
+    .l-#{$tshirt}-col-6 { @extend %#{$tshirt}6; }
+    .l-#{$tshirt}-col-7 { @extend %#{$tshirt}7; }
+    .l-#{$tshirt}-col-8 { @extend %#{$tshirt}8; }
+    .l-#{$tshirt}-col-9 { @extend %#{$tshirt}9; }
+    .l-#{$tshirt}-col-last { @extend %#{$tshirt}last; }
+    
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}2-sub1; }
+    .l-#{$tshirt}-col-2 .l-#{$tshirt}-col-last { @extend %#{$tshirt}2-sublast; }
+    
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}3-sub1; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}3-sub2; }
+    .l-#{$tshirt}-col-3 .l-#{$tshirt}-col-last { @extend %#{$tshirt}3-sublast; }
+    
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}4-sub1; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}4-sub2; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}4-sub3; }
+    .l-#{$tshirt}-col-4 .l-#{$tshirt}-col-last { @extend %#{$tshirt}4-sublast; }
+    
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}5-sub1; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}5-sub2; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}5-sub3; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}5-sub4; }
+    .l-#{$tshirt}-col-5 .l-#{$tshirt}-col-last { @extend %#{$tshirt}5-sublast; }
+    
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}6-sub1; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}6-sub2; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}6-sub3; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}6-sub4; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}6-sub5; }
+    .l-#{$tshirt}-col-6 .l-#{$tshirt}-col-last { @extend %#{$tshirt}6-sublast; }
+    
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}7-sub1; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}7-sub2; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}7-sub3; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}7-sub4; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}7-sub5; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}7-sub6; }
+    .l-#{$tshirt}-col-7 .l-#{$tshirt}-col-last { @extend %#{$tshirt}7-sublast; }
+    
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}8-sub1; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}8-sub2; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}8-sub3; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}8-sub4; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}8-sub5; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}8-sub6; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}8-sub7; }
+    .l-#{$tshirt}-col-8 .l-#{$tshirt}-col-last { @extend %#{$tshirt}8-sublast; }
+    
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}9-sub1; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}9-sub2; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}9-sub3; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}9-sub4; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}9-sub5; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}9-sub6; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}9-sub7; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}9-sub8; }
+    .l-#{$tshirt}-col-9 .l-#{$tshirt}-col-last { @extend %#{$tshirt}9-sublast; }
+    
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}10-sub1; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}10-sub2; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}10-sub3; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}10-sub4; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}10-sub5; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}10-sub6; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}10-sub7; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}10-sub8; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-9 { @extend %#{$tshirt}10-sub9; }
+    .l-#{$tshirt}-col-10 .l-#{$tshirt}-col-last { @extend %#{$tshirt}10-sublast; }
+    
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}11-sub1; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}11-sub2; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}11-sub3; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}11-sub4; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}11-sub5; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}11-sub6; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}11-sub7; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}11-sub8; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-9 { @extend %#{$tshirt}11-sub9; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-10 { @extend %#{$tshirt}11-sub10; }
+    .l-#{$tshirt}-col-11 .l-#{$tshirt}-col-last { @extend %#{$tshirt}11-sublast; }
+    
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-1 { @extend %#{$tshirt}12-sub1; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-2 { @extend %#{$tshirt}12-sub2; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-3 { @extend %#{$tshirt}12-sub3; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-4 { @extend %#{$tshirt}12-sub4; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-5 { @extend %#{$tshirt}12-sub5; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-6 { @extend %#{$tshirt}12-sub6; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-7 { @extend %#{$tshirt}12-sub7; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-8 { @extend %#{$tshirt}12-sub8; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-9 { @extend %#{$tshirt}12-sub9; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-10 { @extend %#{$tshirt}12-sub10; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-11 { @extend %#{$tshirt}12-sub11; }
+    .l-#{$tshirt}-col-12 .l-#{$tshirt}-col-last { @extend %#{$tshirt}12-sublast; }
+}
+
+// IE8 and lower
+.lt-ie9, .l-lock {
+    
+    .l-container {
+        margin: 0 auto;
+        width: 1440px;
+    }
+    .l-l-col-1, .l-xl-col-1, .l-xxl-col-1, .l-xxxl-col-1 { @include span-columns(1,12); }
+    .l-l-col-2, .l-xl-col-2, .l-xxl-col-2, .l-xxxl-col-2 { 
+        @include span-columns(2,12); 
+        .l-l-col-1, .l-xl-col-1, .l-xxl-col-1, .l-xxxl-col-1 { @include span-columns(1,12); }
+        .l-l-col-last, .l-xl-col-last, .l-xxl-col-last, .l-xxxl-col-last { @include omega; }
+    }
+    .l-l-col-3, .l-xl-col-3, .l-xxl-col-3, .l-xxxl-col-3 { 
+        @include span-columns(3,12); 
+        .l-l-col-1, .l-xl-col-1, .l-xxl-col-1, .l-xxxl-col-1 { @include span-columns(1,12); }
+        .l-l-col-2, .l-xl-col-2, .l-xxl-col-2, .l-xxxl-col-2 { @include span-columns(2,12); }
+        .l-l-col-last, .l-xl-col-last, .l-xxl-col-last, .l-xxxl-col-last { @include omega; }
+    }
+    .l-l-col-4, .l-xl-col-4, .l-xxl-col-4, .l-xxxl-col-4 {
+        @include span-columns(4,12);
+        .l-l-col-1, .l-xl-col-1, .l-xxl-col-1, .l-xxxl-col-1 { @include span-columns(1,12); }
+        .l-l-col-2, .l-xl-col-2, .l-xxl-col-2, .l-xxxl-col-2 { @include span-columns(2,12); }
+        .l-l-col-3, .l-xl-col-3, .l-xxl-col-3, .l-xxxl-col-3 { @include span-columns(3,12); }
+        .l-l-col-last, .l-xl-col-last, .l-xxl-col-last, .l-xxxl-col-last { @include omega; }
+    }
+    .l-l-col-5, .l-xl-col-5, .l-xxl-col-5, .l-xxxl-col-5 {
+        @include span-columns(5,12);
+        .l-l-col-1, .l-xl-col-1, .l-xxl-col-1, .l-xxxl-col-1 { @include span-columns(1,12); }
+        .l-l-col-2, .l-xl-col-2, .l-xxl-col-2, .l-xxxl-col-2 { @include span-columns(2,12); }
+        .l-l-col-3, .l-xl-col-3, .l-xxl-col-3, .l-xxxl-col-3 { @include span-columns(3,12); }
+        .l-l-col-4, .l-xl-col-4, .l-xxl-col-4, .l-xxxl-col-4 { @include span-columns(4,12); }
+        .l-l-col-last, .l-xl-col-last, .l-xxl-col-last, .l-xxxl-col-last { @include omega; }
+    }
+    .l-l-col-6, .l-xl-col-6, .l-xxl-col-6, .l-xxxl-col-6 {
+        @include span-columns(6,12);
+        .l-l-col-1, .l-xl-col-1, .l-xxl-col-1, .l-xxxl-col-1 { @include span-columns(1,12); }
+        .l-l-col-2, .l-xl-col-2, .l-xxl-col-2, .l-xxxl-col-2 { @include span-columns(2,12); }
+        .l-l-col-3, .l-xl-col-3, .l-xxl-col-3, .l-xxxl-col-3 { @include span-columns(3,12); }
+        .l-l-col-4, .l-xl-col-4, .l-xxl-col-4, .l-xxxl-col-4 { @include span-columns(4,12); }
+        .l-l-col-5, .l-xl-col-5, .l-xxl-col-5, .l-xxxl-col-5 { @include span-columns(5,12); }
+        .l-l-col-last, .l-xl-col-last, .l-xxl-col-last, .l-xxxl-col-last { @include omega; }
+    }
+    .l-l-col-7, .l-xl-col-7, .l-xxl-col-7, .l-xxxl-col-7 {
+        @include span-columns(7,12);
+        .l-l-col-1, .l-xl-col-1, .l-xxl-col-1, .l-xxxl-col-1 { @include span-columns(1,12); }
+        .l-l-col-2, .l-xl-col-2, .l-xxl-col-2, .l-xxxl-col-2 { @include span-columns(2,12); }
+        .l-l-col-3, .l-xl-col-3, .l-xxl-col-3, .l-xxxl-col-3 { @include span-columns(3,12); }
+        .l-l-col-4, .l-xl-col-4, .l-xxl-col-4, .l-xxxl-col-4 { @include span-columns(4,12); }
+        .l-l-col-5, .l-xl-col-5, .l-xxl-col-5, .l-xxxl-col-5 { @include span-columns(5,12); }
+        .l-l-col-6, .l-xl-col-6, .l-xxl-col-6, .l-xxxl-col-6 { @include span-columns(6,12); }
+        .l-l-col-last, .l-xl-col-last, .l-xxl-col-last, .l-xxxl-col-last { @include omega; }
+    }
+    .l-l-col-8, .l-xl-col-8, .l-xxl-col-8, .l-xxxl-col-8 {
+        @include span-columns(8,12);
+        .l-l-col-1, .l-xl-col-1, .l-xxl-col-1, .l-xxxl-col-1 { @include span-columns(1,12); }
+        .l-l-col-2, .l-xl-col-2, .l-xxl-col-2, .l-xxxl-col-2 { @include span-columns(2,12); }
+        .l-l-col-3, .l-xl-col-3, .l-xxl-col-3, .l-xxxl-col-3 { @include span-columns(3,12); }
+        .l-l-col-4, .l-xl-col-4, .l-xxl-col-4, .l-xxxl-col-4 { @include span-columns(4,12); }
+        .l-l-col-5, .l-xl-col-5, .l-xxl-col-5, .l-xxxl-col-5 { @include span-columns(5,12); }
+        .l-l-col-6, .l-xl-col-6, .l-xxl-col-6, .l-xxxl-col-6 { @include span-columns(6,12); }
+        .l-l-col-7, .l-xl-col-7, .l-xxl-col-7, .l-xxxl-col-7 { @include span-columns(7,12); }
+        .l-l-col-last, .l-xl-col-last, .l-xxl-col-last, .l-xxxl-col-last { @include omega; }
+    }
+    .l-l-col-9, .l-xl-col-9, .l-xxl-col-9, .l-xxxl-col-9 {
+        @include span-columns(9,12);
+        .l-l-col-1, .l-xl-col-1, .l-xxl-col-1, .l-xxxl-col-1 { @include span-columns(1,12); }
+        .l-l-col-2, .l-xl-col-2, .l-xxl-col-2, .l-xxxl-col-2 { @include span-columns(2,12); }
+        .l-l-col-3, .l-xl-col-3, .l-xxl-col-3, .l-xxxl-col-3 { @include span-columns(3,12); }
+        .l-l-col-4, .l-xl-col-4, .l-xxl-col-4, .l-xxxl-col-4 { @include span-columns(4,12); }
+        .l-l-col-5, .l-xl-col-5, .l-xxl-col-5, .l-xxxl-col-5 { @include span-columns(5,12); }
+        .l-l-col-6, .l-xl-col-6, .l-xxl-col-6, .l-xxxl-col-6 { @include span-columns(6,12); }
+        .l-l-col-7, .l-xl-col-7, .l-xxl-col-7, .l-xxxl-col-7 { @include span-columns(7,12); }
+        .l-l-col-8, .l-xl-col-8, .l-xxl-col-8, .l-xxxl-col-8 { @include span-columns(8,12); }
+        .l-l-col-last, .l-xl-col-last, .l-xxl-col-last, .l-xxxl-col-last { @include omega; }
+    }
+    .l-l-col-10, .l-xl-col-10, .l-xxl-col-10, .l-xxxl-col-10 {
+        @include span-columns(10,12);
+        .l-l-col-1, .l-xl-col-1, .l-xxl-col-1, .l-xxxl-col-1 { @include span-columns(1,12); }
+        .l-l-col-2, .l-xl-col-2, .l-xxl-col-2, .l-xxxl-col-2 { @include span-columns(2,12); }
+        .l-l-col-3, .l-xl-col-3, .l-xxl-col-3, .l-xxxl-col-3 { @include span-columns(3,12); }
+        .l-l-col-4, .l-xl-col-4, .l-xxl-col-4, .l-xxxl-col-4 { @include span-columns(4,12); }
+        .l-l-col-5, .l-xl-col-5, .l-xxl-col-5, .l-xxxl-col-5 { @include span-columns(5,12); }
+        .l-l-col-6, .l-xl-col-6, .l-xxl-col-6, .l-xxxl-col-6 { @include span-columns(6,12); }
+        .l-l-col-7, .l-xl-col-7, .l-xxl-col-7, .l-xxxl-col-7 { @include span-columns(7,12); }
+        .l-l-col-8, .l-xl-col-8, .l-xxl-col-8, .l-xxxl-col-8 { @include span-columns(8,12); }
+        .l-l-col-9, .l-xl-col-9, .l-xxl-col-9, .l-xxxl-col-9 { @include span-columns(9,12); }
+        .l-l-col-last, .l-xl-col-last, .l-xxl-col-last, .l-xxxl-col-last { @include omega; }
+    }
+    .l-l-col-11, .l-xl-col-11, .l-xxl-col-11, .l-xxxl-col-11 {
+        @include span-columns(11,12);
+        .l-l-col-1, .l-xl-col-1, .l-xxl-col-1, .l-xxxl-col-1 { @include span-columns(1,12); }
+        .l-l-col-2, .l-xl-col-2, .l-xxl-col-2, .l-xxxl-col-2 { @include span-columns(2,12); }
+        .l-l-col-3, .l-xl-col-3, .l-xxl-col-3, .l-xxxl-col-3 { @include span-columns(3,12); }
+        .l-l-col-4, .l-xl-col-4, .l-xxl-col-4, .l-xxxl-col-4 { @include span-columns(4,12); }
+        .l-l-col-5, .l-xl-col-5, .l-xxl-col-5, .l-xxxl-col-5 { @include span-columns(5,12); }
+        .l-l-col-6, .l-xl-col-6, .l-xxl-col-6, .l-xxxl-col-6 { @include span-columns(6,12); }
+        .l-l-col-7, .l-xl-col-7, .l-xxl-col-7, .l-xxxl-col-7 { @include span-columns(7,12); }
+        .l-l-col-8, .l-xl-col-8, .l-xxl-col-8, .l-xxxl-col-8 { @include span-columns(8,12); }
+        .l-l-col-9, .l-xl-col-9, .l-xxl-col-9, .l-xxxl-col-9 { @include span-columns(9,12); }
+        .l-l-col-10, .l-xl-col-10, .l-xxl-col-10, .l-xxxl-col-10 { @include span-columns(10,12); }
+        .l-l-col-last, .l-xl-col-last, .l-xxl-col-last, .l-xxxl-col-last { @include omega; }
+    }
+    .l-l-col-12, .l-xl-col-12, .l-xxl-col-12, .l-xxxl-col-12 {
+        @include span-columns(12,12);
+        .l-l-col-1, .l-xl-col-1, .l-xxl-col-1, .l-xxxl-col-1 { @include span-columns(1,12); }
+        .l-l-col-2, .l-xl-col-2, .l-xxl-col-2, .l-xxxl-col-2 { @include span-columns(2,12); }
+        .l-l-col-3, .l-xl-col-3, .l-xxl-col-3, .l-xxxl-col-3 { @include span-columns(3,12); }
+        .l-l-col-4, .l-xl-col-4, .l-xxl-col-4, .l-xxxl-col-4 { @include span-columns(4,12); }
+        .l-l-col-5, .l-xl-col-5, .l-xxl-col-5, .l-xxxl-col-5 { @include span-columns(5,12); }
+        .l-l-col-6, .l-xl-col-6, .l-xxl-col-6, .l-xxxl-col-6 { @include span-columns(6,12); }
+        .l-l-col-7, .l-xl-col-7, .l-xxl-col-7, .l-xxxl-col-7 { @include span-columns(7,12); }
+        .l-l-col-8, .l-xl-col-8, .l-xxl-col-8, .l-xxxl-col-8 { @include span-columns(8,12); }
+        .l-l-col-9, .l-xl-col-9, .l-xxl-col-9, .l-xxxl-col-9 { @include span-columns(9,12); }
+        .l-l-col-10, .l-xl-col-10, .l-xxl-col-10, .l-xxxl-col-10 { @include span-columns(10,12); }
+        .l-l-col-11, .l-xl-col-11, .l-xxl-col-11, .l-xxxl-col-11 { @include span-columns(11,12); }
+        .l-l-col-last, .l-xl-col-last, .l-xxl-col-last, .l-xxxl-col-last { @include omega; }
+    }
+    .l-l-col-last, .l-xl-col-last, .l-xxl-col-last, .l-xxxl-col-last { @include omega; }
+    
+}

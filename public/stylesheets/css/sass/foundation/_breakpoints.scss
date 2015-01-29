@@ -1,0 +1,78 @@
+/* 
+    Created on : Jul 27, 2014, 1:51:52 PM
+    Author     : mikejecko
+*/
+
+@import "susyone";
+
+$column-width: 3em;
+$gutter-width: 1em;
+$grid-padding: 0.5em;
+$container-style: magic;
+$container-width: 64em;
+
+@mixin breakpoint($tshirtsize, $direction: "up") {
+    $breakpoint-columns: 4;
+    $breakpoint-size: 4;
+    
+    @if $tshirtsize == XS {
+        // 240px
+        $breakpoint-columns: 4;
+        $breakpoint-size: 15em;
+    } @else if $tshirtsize == S {
+        // 320px
+        $breakpoint-columns: 4;
+        $breakpoint-size: 20em;
+    } @else if $tshirtsize == SM {
+        // 480px
+        $breakpoint-columns: 6;
+        $breakpoint-size: 30em;
+    } @else if $tshirtsize == M {
+        // 560px
+        $breakpoint-columns: 6;
+        $breakpoint-size: 35em;
+    } @else if $tshirtsize == MML {
+        // 672px
+        $breakpoint-columns: 9;
+        $breakpoint-size: 42em;
+    } @else if $tshirtsize == ML {
+        // 768px
+        $breakpoint-columns: 12;
+        $breakpoint-size: 48em;
+    } @else if $tshirtsize == MLL {
+        // 864px
+        $breakpoint-columns: 12;
+        $breakpoint-size: 54em;
+    } @else if $tshirtsize == L {
+        // 960px
+        $breakpoint-columns: 12;
+        $breakpoint-size: 60em;
+    } @else if $tshirtsize == XL {
+        // 1024px
+        $breakpoint-columns: 12;
+        $breakpoint-size: 64em;
+        $breakpoint-width: 84em;
+    } @else if $tshirtsize == XXL {
+        // 1200px
+        $breakpoint-columns: 12;
+        $breakpoint-size: 72em;
+        $breakpoint-width: 84em;
+    } @else if $tshirtsize == XXXL {
+        // 1440px
+        $breakpoint-columns: 12;
+        $breakpoint-size: 84em;
+        $breakpoint-width: 84em;
+    }
+    
+    @if $direction == up {
+        @include at-breakpoint($breakpoint-size $breakpoint-columns, $base-font-size) {
+            @content;
+        }
+    } @else {
+        @include at-breakpoint($breakpoint-columns ($breakpoint-size - 0.1), $base-font-size) {
+            @content;
+        }
+    }
+    
+    .t-col-container { @include susy-grid-background; }
+}

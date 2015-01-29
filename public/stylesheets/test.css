@@ -1,0 +1,75 @@
+/*
+Syntax error: File to import not found or unreadable: foundation/breakpoints.
+              Load path: /Users/brandonyuhas/dev/tmp/klowdtv-test/public/stylesheets/sass
+        on line 6 of ./public/stylesheets/sass/test.scss
+
+1: /*
+2:     Created on : Aug 1, 2014, 2:51:37 PM
+3:     Author     : mikejecko
+4: *\/
+5: 
+6: @import "foundation/breakpoints";
+7: @import "foundation/colors";
+8: 
+9: .t-header-container {
+10:     text-align: center;
+11: 
+
+Backtrace:
+./public/stylesheets/sass/test.scss:6
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/import_node.rb:67:in `rescue in import'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/import_node.rb:45:in `import'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/import_node.rb:28:in `imported_file'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/import_node.rb:37:in `css_import?'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:217:in `visit_import'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/root_node.rb:20:in `render'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/engine.rb:315:in `_render'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/engine.rb:262:in `render'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:362:in `update_stylesheet'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:201:in `each'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin.rb:81:in `update_stylesheets'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin.rb:54:in `check_for_updates'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin/rack.rb:51:in `call'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-protection-1.5.3/lib/rack/protection/xss_header.rb:18:in `call'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-protection-1.5.3/lib/rack/protection/path_traversal.rb:16:in `call'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-protection-1.5.3/lib/rack/protection/json_csrf.rb:18:in `call'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-protection-1.5.3/lib/rack/protection/frame_options.rb:31:in `call'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-1.6.0/lib/rack/logger.rb:15:in `call'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-1.6.0/lib/rack/commonlogger.rb:33:in `call'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-1.4.5/lib/sinatra/base.rb:217:in `call'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-1.4.5/lib/sinatra/base.rb:210:in `call'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-1.6.0/lib/rack/head.rb:13:in `call'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-1.6.0/lib/rack/methodoverride.rb:22:in `call'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-1.4.5/lib/sinatra/show_exceptions.rb:21:in `call'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-1.4.5/lib/sinatra/base.rb:180:in `call'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-1.4.5/lib/sinatra/base.rb:2014:in `call'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-1.4.5/lib/sinatra/base.rb:1478:in `block in call'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-1.4.5/lib/sinatra/base.rb:1788:in `synchronize'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-1.4.5/lib/sinatra/base.rb:1478:in `call'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thin-1.6.2/lib/thin/connection.rb:86:in `block in pre_process'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thin-1.6.2/lib/thin/connection.rb:84:in `catch'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thin-1.6.2/lib/thin/connection.rb:84:in `pre_process'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/eventmachine.rb:1037:in `call'
+/Users/brandonyuhas/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/eventmachine.rb:1037:in `block in spawn_threadpool'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: foundation/breakpoints.\A               Load path: /Users/brandonyuhas/dev/tmp/klowdtv-test/public/stylesheets/sass\A         on line 6 of ./public/stylesheets/sass/test.scss\A \A 1: /*\A 2:     Created on : Aug 1, 2014, 2:51:37 PM\A 3:     Author     : mikejecko\A 4: */\A 5: \A 6: @import \"foundation/breakpoints\";\A 7: @import \"foundation/colors\";\A 8: \A 9: .t-header-container {\A 10:     text-align: center;\A 11: "; }

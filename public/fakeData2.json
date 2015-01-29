@@ -1,0 +1,612 @@
+[
+   {
+      "channel":"012",
+      "callSign":"QVC",
+      "stationId":"11069",
+      "preferredImage":{
+         "uri":"sources/h3/NowShowing/11069/s11069_h3_aa.png",
+         "height":"270",
+         "width":"360",
+         "primary":"true",
+         "category":"Logo"
+      },
+      "airings":[
+         {
+            "startTime":"2015-01-29T06:00Z",
+            "endTime":"2015-01-29T07:00Z",
+            "duration":0,
+            "ratings":[
+               {
+                  "body":"USA Parental Rating",
+                  "code":"TVG"
+               }
+            ],
+            "channels":[
+               "012",
+               "190"
+            ],
+            "stationId":"11069",
+            "program":{
+               "tmsId":"SH007343770000",
+               "rootId":"305303",
+               "seriesId":"305303",
+               "title":"Tignanello Handbags",
+               "titleLang":"en",
+               "shortDescription":"Leather accessories and handbags.",
+               "longDescription":"Leather accessories and handbags.",
+               "descriptionLang":"en",
+               "subType":"Series",
+               "genres":[
+                  "Shopping"
+               ],
+               "preferredImage":{
+                  "uri":"assets/p305303_st_v5_aa.jpg",
+                  "height":"360",
+                  "width":"240",
+                  "category":"Staple",
+                  "caption":{
+                     "content":"Tignanello Handbags",
+                     "lang":"en"
+                  }
+               },
+               "origAirDate":"2005-04-12",
+               "entityType":"Show"
+            }
+         },
+         {
+            "startTime":"2015-01-29T07:00Z",
+            "endTime":"2015-01-29T08:00Z",
+            "duration":60,
+            "ratings":[
+               {
+                  "body":"USA Parental Rating",
+                  "code":"TVG"
+               }
+            ],
+            "channels":[
+               "012",
+               "190"
+            ],
+            "stationId":"11069",
+            "program":{
+               "tmsId":"EP012968190002",
+               "rootId":"8273684",
+               "seriesId":"8181234",
+               "title":"Liz Claiborne New York",
+               "titleLang":"en",
+               "shortDescription":"Apparel and accessories.",
+               "longDescription":"Apparel and accessories.",
+               "descriptionLang":"en",
+               "subType":"Series",
+               "genres":[
+                  "Shopping"
+               ],
+               "preferredImage":{
+                  "uri":"assets/p8181234_st_v5_aa.jpg",
+                  "height":"360",
+                  "width":"240",
+                  "category":"Staple",
+                  "tier":"Series"
+               },
+               "origAirDate":"2010-10-14",
+               "episodeTitle":"Fashion",
+               "entityType":"Episode"
+            }
+         },
+         {
+            "startTime":"2015-01-29T08:00Z",
+            "endTime":"2015-01-29T09:00Z",
+            "duration":60,
+            "ratings":[
+               {
+                  "body":"USA Parental Rating",
+                  "code":"TVG"
+               }
+            ],
+            "qualifiers":[
+               "New"
+            ],
+            "channels":[
+               "012",
+               "190"
+            ],
+            "stationId":"11069",
+            "program":{
+               "tmsId":"EP007040030032",
+               "rootId":"11294486",
+               "seriesId":"287201",
+               "title":"Shoe Spotlight",
+               "titleLang":"en",
+               "shortDescription":"Featuring footwear by Earth Origins.",
+               "longDescription":"Featuring footwear by Earth Origins.",
+               "descriptionLang":"en",
+               "subType":"Series",
+               "genres":[
+                  "Shopping"
+               ],
+               "preferredImage":{
+                  "uri":"assets/p287201_st_v5_aa.jpg",
+                  "height":"360",
+                  "width":"240",
+                  "category":"Staple",
+                  "tier":"Series"
+               },
+               "origAirDate":"2015-01-28",
+               "episodeTitle":"Earth Origins",
+               "entityType":"Episode"
+            }
+         }
+      ]
+   },
+   {
+      "channel":"013",
+      "callSign":"LOOR013",
+      "stationId":"23321",
+      "preferredImage":{
+         "uri":"sources/generic/generic_sources_h3.png"
+      },
+      "airings":[
+         {
+            "startTime":"2015-01-29T03:00Z",
+            "endTime":"2015-01-29T07:00Z",
+            "duration":150,
+            "channels":[
+               "013"
+            ],
+            "stationId":"23321",
+            "program":{
+               "tmsId":"SH001103200000",
+               "rootId":"782082",
+               "seriesId":"782082",
+               "title":"Local Origination",
+               "titleLang":"en",
+               "subType":"Series",
+               "preferredImage":{
+                  "uri":"assets/p782082_st_v5_aa.jpg",
+                  "height":"360",
+                  "width":"240",
+                  "category":"Staple",
+                  "caption":{
+                     "content":"Local Origination",
+                     "lang":"en"
+                  }
+               },
+               "origAirDate":"1994-06-12",
+               "entityType":"Show"
+            }
+         },
+         {
+            "startTime":"2015-01-29T07:00Z",
+            "endTime":"2015-01-29T11:00Z",
+            "duration":240,
+            "channels":[
+               "013"
+            ],
+            "stationId":"23321",
+            "program":{
+               "tmsId":"SH001103200000",
+               "rootId":"782082",
+               "seriesId":"782082",
+               "title":"Local Origination",
+               "titleLang":"en",
+               "subType":"Series",
+               "preferredImage":{
+                  "uri":"assets/p782082_st_v5_aa.jpg",
+                  "height":"360",
+                  "width":"240",
+                  "category":"Staple",
+                  "caption":{
+                     "content":"Local Origination",
+                     "lang":"en"
+                  }
+               },
+               "origAirDate":"1994-06-12",
+               "entityType":"Show"
+            }
+         }
+      ]
+   },
+   {
+      "channel":"015",
+      "callSign":"WDCW",
+      "stationId":"11450",
+      "preferredImage":{
+         "uri":"sources/h3/NowShowing/51306/s51306_h3_aa.png",
+         "height":"270",
+         "width":"360",
+         "primary":"true",
+         "category":"Logo"
+      },
+      "airings":[
+         {
+            "startTime":"2015-01-29T06:00Z",
+            "endTime":"2015-01-29T06:30Z",
+            "duration":0,
+            "ratings":[
+               {
+                  "body":"USA Parental Rating",
+                  "code":"TVPG"
+               }
+            ],
+            "qualifiers":[
+               "CC",
+               "Stereo",
+               "New"
+            ],
+            "channels":[
+               "015"
+            ],
+            "stationId":"11450",
+            "program":{
+               "tmsId":"EP008556560800",
+               "rootId":"11442739",
+               "seriesId":"186631",
+               "title":"Comics Unleashed With Byron Allen",
+               "titleLang":"en",
+               "shortDescription":"Drew Fraser; Jedda Jones; Owen Smith; Roy Wood Jr.",
+               "longDescription":"Drew Fraser; Jedda Jones; Owen Smith; Roy Wood Jr.",
+               "descriptionLang":"en",
+               "subType":"Series",
+               "genres":[
+                  "Comedy"
+               ],
+               "preferredImage":{
+                  "uri":"assets/p186631_b_v5_aa.jpg",
+                  "height":"360",
+                  "width":"240",
+                  "primary":"true",
+                  "category":"Banner-L1",
+                  "tier":"Series"
+               },
+               "origAirDate":"2015-01-28",
+               "entityType":"Episode"
+            }
+         },
+         {
+            "startTime":"2015-01-29T06:30Z",
+            "endTime":"2015-01-29T07:00Z",
+            "duration":30,
+            "ratings":[
+               {
+                  "body":"USA Parental Rating",
+                  "code":"TV14"
+               }
+            ],
+            "qualifiers":[
+               "CC",
+               "Stereo"
+            ],
+            "channels":[
+               "015"
+            ],
+            "stationId":"11450",
+            "program":{
+               "tmsId":"EP002960010093",
+               "rootId":"2199830",
+               "seriesId":"184483",
+               "title":"Family Guy",
+               "titleLang":"en",
+               "shortDescription":"Peter beats up a bully who harasses Chris; Stewie obsesses over getting a tan.",
+               "longDescription":"Peter beats up a bully who harasses Chris; Stewie obsesses over getting a tan then fears he has cancer after spending too much time in a tanning booth.",
+               "descriptionLang":"en",
+               "subType":"Series",
+               "genres":[
+                  "Sitcom",
+                  "Animated"
+               ],
+               "topCast":[
+                  "Seth MacFarlane",
+                  "Alex Borstein",
+                  "Seth Green"
+               ],
+               "preferredImage":{
+                  "uri":"assets/p184483_b_v5_ai.jpg",
+                  "height":"360",
+                  "width":"240",
+                  "primary":"true",
+                  "category":"Banner-L1",
+                  "tier":"Series"
+               },
+               "origAirDate":"2007-02-18",
+               "episodeTitle":"The Tan Aquatic With Steve Zissou",
+               "seasonNum":5,
+               "episodeNum":11,
+               "entityType":"Episode"
+            }
+         },
+         {
+            "startTime":"2015-01-29T07:00Z",
+            "endTime":"2015-01-29T07:30Z",
+            "duration":30,
+            "ratings":[
+               {
+                  "body":"USA Parental Rating",
+                  "code":"TVPG"
+               }
+            ],
+            "qualifiers":[
+               "CC",
+               "Stereo"
+            ],
+            "channels":[
+               "015"
+            ],
+            "stationId":"11450",
+            "program":{
+               "tmsId":"EP011581190076",
+               "rootId":"9381739",
+               "seriesId":"3560344",
+               "title":"The Middle",
+               "titleLang":"en",
+               "shortDescription":"Mike accidentally reveals that Axl is his favorite child; Brick tries to grow a giant tomato.",
+               "longDescription":"Mike accidentally reveals that Axl is his favorite child; Brick tries to grow a giant tomato; Sue encourages her father to participate in a variety of activities with her.",
+               "descriptionLang":"en",
+               "subType":"Series",
+               "genres":[
+                  "Sitcom"
+               ],
+               "topCast":[
+                  "Patricia Heaton",
+                  "Neil Flynn",
+                  "Charlie McDermott"
+               ],
+               "preferredImage":{
+                  "uri":"assets/p3560344_b_v5_ae.jpg",
+                  "height":"360",
+                  "width":"240",
+                  "primary":"true",
+                  "category":"Banner-L1",
+                  "tier":"Series"
+               },
+               "origAirDate":"2012-09-26",
+               "episodeTitle":"Last Whiff of Summer, Part 1",
+               "seasonNum":4,
+               "episodeNum":1,
+               "entityType":"Episode"
+            }
+         },
+         {
+            "startTime":"2015-01-29T07:30Z",
+            "endTime":"2015-01-29T08:00Z",
+            "duration":30,
+            "channels":[
+               "015"
+            ],
+            "stationId":"11450",
+            "program":{
+               "tmsId":"SH000000010000",
+               "rootId":"459763",
+               "seriesId":"459763",
+               "title":"Paid Programming",
+               "titleLang":"en",
+               "shortDescription":"Paid programming.",
+               "longDescription":"Paid programming.",
+               "descriptionLang":"en",
+               "subType":"Paid Programming",
+               "genres":[
+                  "Shopping"
+               ],
+               "preferredImage":{
+                  "uri":"assets/p459763_b_v5_aa.jpg",
+                  "height":"360",
+                  "width":"240",
+                  "primary":"true",
+                  "category":"Banner",
+                  "caption":{
+                     "content":"Paid Programming",
+                     "lang":"en"
+                  }
+               },
+               "entityType":"Show"
+            }
+         },
+         {
+            "startTime":"2015-01-29T08:00Z",
+            "endTime":"2015-01-29T08:30Z",
+            "duration":30,
+            "channels":[
+               "015"
+            ],
+            "stationId":"11450",
+            "program":{
+               "tmsId":"SH017472810000",
+               "rootId":"10005060",
+               "seriesId":"10005060",
+               "title":"Larry King Special Report",
+               "titleLang":"en",
+               "shortDescription":"Larry King investigates Omega XL, the ultimate all natural solution for pain and inflammation.",
+               "longDescription":"Larry King investigates Omega XL, the ultimate all natural solution for pain and inflammation.",
+               "descriptionLang":"en",
+               "subType":"Paid Programming",
+               "genres":[
+                  "Consumer"
+               ],
+               "preferredImage":{
+                  "uri":"assets/p10005060_st_v5_aa.jpg",
+                  "height":"360",
+                  "width":"240",
+                  "category":"Staple",
+                  "caption":{
+                     "content":"Larry King Special Report",
+                     "lang":"en"
+                  }
+               },
+               "entityType":"Show"
+            }
+         },
+         {
+            "startTime":"2015-01-29T08:30Z",
+            "endTime":"2015-01-29T09:00Z",
+            "duration":30,
+            "channels":[
+               "015"
+            ],
+            "stationId":"11450",
+            "program":{
+               "tmsId":"SH016598020000",
+               "rootId":"9638974",
+               "seriesId":"9638974",
+               "title":"More Sex, Less Stress",
+               "titleLang":"en",
+               "shortDescription":"Androzene promotes male sexual health and nourishes the body.",
+               "longDescription":"Androzene promotes male sexual health and nourishes the body.",
+               "descriptionLang":"en",
+               "subType":"Paid Programming",
+               "genres":[
+                  "Consumer"
+               ],
+               "preferredImage":{
+                  "uri":"assets/p9638974_st_v5_aa.jpg",
+                  "height":"360",
+                  "width":"240",
+                  "category":"Staple",
+                  "caption":{
+                     "content":"More Sex, Less Stress",
+                     "lang":"en"
+                  }
+               },
+               "entityType":"Show"
+            }
+         }
+      ]
+   },
+   {
+      "channel":"190",
+      "callSign":"QVC",
+      "stationId":"11069",
+      "preferredImage":{
+         "uri":"sources/h3/NowShowing/11069/s11069_h3_aa.png",
+         "height":"270",
+         "width":"360",
+         "primary":"true",
+         "category":"Logo"
+      },
+      "airings":[
+         {
+            "startTime":"2015-01-29T06:00Z",
+            "endTime":"2015-01-29T07:00Z",
+            "duration":0,
+            "ratings":[
+               {
+                  "body":"USA Parental Rating",
+                  "code":"TVG"
+               }
+            ],
+            "channels":[
+               "012",
+               "190"
+            ],
+            "stationId":"11069",
+            "program":{
+               "tmsId":"SH007343770000",
+               "rootId":"305303",
+               "seriesId":"305303",
+               "title":"Tignanello Handbags",
+               "titleLang":"en",
+               "shortDescription":"Leather accessories and handbags.",
+               "longDescription":"Leather accessories and handbags.",
+               "descriptionLang":"en",
+               "subType":"Series",
+               "genres":[
+                  "Shopping"
+               ],
+               "preferredImage":{
+                  "uri":"assets/p305303_st_v5_aa.jpg",
+                  "height":"360",
+                  "width":"240",
+                  "category":"Staple",
+                  "caption":{
+                     "content":"Tignanello Handbags",
+                     "lang":"en"
+                  }
+               },
+               "origAirDate":"2005-04-12",
+               "entityType":"Show"
+            }
+         },
+         {
+            "startTime":"2015-01-29T07:00Z",
+            "endTime":"2015-01-29T08:00Z",
+            "duration":60,
+            "ratings":[
+               {
+                  "body":"USA Parental Rating",
+                  "code":"TVG"
+               }
+            ],
+            "channels":[
+               "012",
+               "190"
+            ],
+            "stationId":"11069",
+            "program":{
+               "tmsId":"EP012968190002",
+               "rootId":"8273684",
+               "seriesId":"8181234",
+               "title":"Liz Claiborne New York",
+               "titleLang":"en",
+               "shortDescription":"Apparel and accessories.",
+               "longDescription":"Apparel and accessories.",
+               "descriptionLang":"en",
+               "subType":"Series",
+               "genres":[
+                  "Shopping"
+               ],
+               "preferredImage":{
+                  "uri":"assets/p8181234_st_v5_aa.jpg",
+                  "height":"360",
+                  "width":"240",
+                  "category":"Staple",
+                  "tier":"Series"
+               },
+               "origAirDate":"2010-10-14",
+               "episodeTitle":"Fashion",
+               "entityType":"Episode"
+            }
+         },
+         {
+            "startTime":"2015-01-29T08:00Z",
+            "endTime":"2015-01-29T09:00Z",
+            "duration":60,
+            "ratings":[
+               {
+                  "body":"USA Parental Rating",
+                  "code":"TVG"
+               }
+            ],
+            "qualifiers":[
+               "New"
+            ],
+            "channels":[
+               "012",
+               "190"
+            ],
+            "stationId":"11069",
+            "program":{
+               "tmsId":"EP007040030032",
+               "rootId":"11294486",
+               "seriesId":"287201",
+               "title":"Shoe Spotlight",
+               "titleLang":"en",
+               "shortDescription":"Featuring footwear by Earth Origins.",
+               "longDescription":"Featuring footwear by Earth Origins.",
+               "descriptionLang":"en",
+               "subType":"Series",
+               "genres":[
+                  "Shopping"
+               ],
+               "preferredImage":{
+                  "uri":"assets/p287201_st_v5_aa.jpg",
+                  "height":"360",
+                  "width":"240",
+                  "category":"Staple",
+                  "tier":"Series"
+               },
+               "origAirDate":"2015-01-28",
+               "episodeTitle":"Earth Origins",
+               "entityType":"Episode"
+            }
+         }
+      ]
+   }
+]

@@ -1,0 +1,63 @@
+/*
+    Created on : Aug 1, 2014, 2:51:37 PM
+    Author     : mikejecko
+*/
+
+@import "foundation/breakpoints";
+@import "foundation/colors";
+
+.t-header-container {
+    text-align: center;
+
+    .t-options {
+        width: 100%;
+
+        .t-home {
+            border-bottom: 1px solid $gray;
+            border-left: 1px solid $gray;
+            border-right: 1px solid $gray;
+            width: 100%;
+        }
+        .t-option {
+            border-left: 1px solid $gray;
+            border-right: 1px solid $gray;
+            width: 33.3%;
+            &:last-child {
+                width: 33.4%;
+            }
+        }
+        .t-option-half {
+            border-left: 1px solid $gray;
+            border-right: 1px solid $gray;
+            width: 50%;
+        }
+    }
+}
+
+@include breakpoint(SM) {
+    .t-header-container {
+        text-align: initial;
+
+        .t-options {
+            width: initial;
+
+            .t-home {
+                border-bottom: 0 none;
+                border-left: 0 none;
+                border-right: 0 none;
+                width: initial;
+                height: initial;
+
+            }
+            .t-option {
+                &:not(:last-child) { border-right: 0 none;}
+                width: initial;
+                &:last-child { width: initial; }
+            }
+            .t-option-half {
+                &:not(:last-child) { border-right: 0 none;}
+                width: initial;
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+/* 
+    Created on : Dec 16, 2014, 12:19:41 AM
+    Author     : mikejecko
+*/
+
+@import "foundation/colors";
+
+.l-message-box {
+    margin-bottom: 10px;
+    padding: 12px 10px;
+}
+
+.t-standard-msg {
+    background-color: $gray;
+    border: 1px solid $darkGray;
+}
+.t-error-msg {
+    background-color: #CF2010;
+    border: 1px solid #CF2010;
+    color: #fff;
+}
+.t-informational-msg {
+    background-color: #ECF1F6;
+    border: 1px solid #7496D1;
+}
+.t-success-msg {
+    background-color: #E6F4DF;
+    border: 1px solid #37A300;
+}
+.t-warning-msg {
+    background-color: #FBF2C2;
+    border: 1px solid #F0BF00;
+}

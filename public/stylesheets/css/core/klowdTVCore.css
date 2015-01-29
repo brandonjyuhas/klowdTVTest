@@ -1,0 +1,120 @@
+/* 
+    Created on : Jun 26, 2014, 9:18:18 AM
+    Author     : mikejecko
+*/
+
+
+
+/* CORE */
+
+
+
+
+
+
+
+
+
+
+/* LAYOUT .l- */
+
+
+
+
+
+
+
+/* Messages
+************ */
+
+
+
+
+/* Visibility
+************** */
+.is-visibility-hidden { visibility: hidden; }
+
+/* THEME - .t */
+
+/* Messages
+************ */
+
+
+
+
+.t-error-icon {
+    color: #FFFFFF;
+    font-size: 1.25em;
+    opacity: 0.4;
+    vertical-align: sub;
+}
+
+.t-success-icon {
+    color: #37A300;
+    font-size: 1.25em;
+    vertical-align: sub;
+}
+
+.t-warning-icon {
+    color: #F0BF00;
+    font-size: 1.25em;
+    vertical-align: sub;
+}
+
+
+
+
+
+
+
+
+
+/* Button
+********** */
+.t-button-bl {
+    background: #00ccff;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00ccff), color-stop(100%, #3366FF));
+    background-image: -webkit-linear-gradient(top,  #00ccff, #3366FF);
+    background-image: -moz-linear-gradient(top, #00ccff, #3366FF);
+    background-image: -o-linear-gradient(top, #00ccff, #3366FF);
+    background-image: linear-gradient(top, #00ccff, #3366FF);
+}
+
+.t-button-bl-hover, .t-button-bl:hover, .t-button-bl:active {
+    background: #3366FF;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3366FF), color-stop(100%, #00ccff));
+    background: -webkit-linear-gradient(top, #3366FF, #00ccff);
+    background: -moz-linear-gradient(top, #3366FF, #00ccff);
+    background: -o-linear-gradient(top, #3366FF, #00ccff);
+    background: linear-gradient(top, #3366FF, #00ccff);
+}
+
+.t-button-grn {
+    background: #33cc33;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #33cc33), color-stop(100%, #009933));
+    background: -webkit-linear-gradient(top, #33cc33, #009933);
+    background: -moz-linear-gradient(top, #33cc33, #009933);
+    background: -o-linear-gradient(top, #33cc33, #009933);
+    background: linear-gradient(top, #33cc33, #009933);
+}
+
+.t-button-grn-hover, .t-button-grn:hover, .t-button-grn:active {
+    background: #009933;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #009933), color-stop(100%, #33cc33));
+    background-image: -webkit-linear-gradient(top,  #009933, #33cc33);
+    background-image: -moz-linear-gradient(top, #009933, #33cc33);
+    background-image: -o-linear-gradient(top, #009933, #33cc33);
+    background-image: linear-gradient(top, #009933, #33cc33);
+}
+
+
+/* Color
+********* */
+.t-ddrng { color: #ffcc66; }
+.t-lght-rng { color: #ffcc00; }
+.t-drk-rng { color: #ff9900; }
+.t-blck { color: #1c1c1c; }
+.t-gry { color: #d2d2d2; }
+.t-drk-gry { color: #696969; }
+
+

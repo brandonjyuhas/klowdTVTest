@@ -1,0 +1,33 @@
+/* 
+    Created on : Jul 27, 2014, 2:44:15 PM
+    Author     : mikejecko
+*/
+
+@import "foundation/breakpoints";
+
+// Layout Placeholders
+@mixin createPlaceholders($tshirt, $cols) {
+    $i:$cols;
+    @while $i > 0 {
+        %#{$tshirt}#{$i} {
+            @include span-columns($i, $cols);
+        }
+        $context:$i;
+        $k:$context - 1;
+        @while $k > 0 {
+            %#{$tshirt}#{$i}-sub#{$k} {
+                @include span-columns($k, $context);
+            }
+            %#{$tshirt}#{$i}-sublast {
+                @include omega;
+            }
+            
+            $k: $k - 1;
+        }
+        
+        $i: $i - 1;
+    }
+    %#{$tshirt}last {
+        @include omega;
+    }
+}

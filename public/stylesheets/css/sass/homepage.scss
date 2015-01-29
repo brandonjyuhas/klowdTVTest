@@ -1,0 +1,87 @@
+/* 
+    Created on : Aug 11, 2014, 11:52:09 AM
+    Author     : mikejecko
+*/
+
+@import "foundation/breakpoints";
+@import "foundation/carousel";
+
+#first-impression {
+    background-image: url('/klowd/images/klowd/KTVCloudBG_M.png');
+    background-repeat: no-repeat;
+    
+    h1 {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    .l-rimage-container {
+        margin-top: 0;
+        padding-top: 0;
+    }
+}
+
+@include breakpoint(S) {
+    #first-impression {
+        
+        h1 {
+            padding-top: 0;
+            padding-bottom: 0.20em;
+        }
+    
+        .l-rimage-container {
+            margin-top: 0;
+            padding-top: 0;
+        }
+        
+    }
+}
+
+@include breakpoint(SM) {
+    #first-impression {
+        
+        h1 {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    
+        .l-rimage-container {
+            margin-top: 0;
+            padding-top: 0;
+        }
+        
+    }
+}
+
+@include breakpoint(ML) {
+    #first-impression {
+        background-image: url('/klowd/images/klowd/KTVCloudBG_ML.png');
+        
+        h1 {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        
+        .l-rimage-container {
+            margin-top: 0;
+            padding-top: 0.5em;
+        }
+        
+    }
+}
+
+@include breakpoint(MLL) {
+    #first-impression {
+        background-image: url('/klowd/images/klowd/KTVCloudBG_XXXL.png');
+        
+        h1 {
+            padding-top: 0;
+            padding-bottom: 0.20em;
+        }
+        
+        .l-rimage-container {
+            margin-top: 2em;
+            padding-top: 1em;
+        }
+    }
+}

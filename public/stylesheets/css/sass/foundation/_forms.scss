@@ -1,0 +1,239 @@
+/* 
+    Created on : Jul 27, 2014, 3:43:12 PM
+    Author     : mikejecko
+*/
+
+@import "foundation/colors";
+
+form, textarea, fieldset, legend {
+    font-size: 14px;
+}
+
+.t-form-asterisk {
+    font-size: 0.5em;
+    vertical-align: super;
+    padding-right: 3px;
+}
+
+label {
+    color: $black;
+    font-size: 14px;
+    line-height: 20px;
+    
+    &:not(.is-for-checkbox):not(.is-for-radio) {
+        display: block;
+        width: 100%;
+    }
+    
+    &.is-for-checkbox, &.is-for-radio {
+        cursor: pointer;
+    }
+}
+
+input {
+    color: $black;
+    font-size: 16px;
+    line-height: 22px;
+    
+    &:not([type="radio"]):not([type="checkbox"]) {
+        padding-right: 8px;
+        padding-left: 8px;
+        &:not(.l-padding-none) {
+            padding-top: 6px;
+            padding-bottom: 7px;
+        }
+        width: 100%;
+    }
+    
+    &[type="radio"], &[type="checkbox"] {
+        cursor: pointer;
+    }
+}
+
+select {
+    color: $black;
+    font-size: 14px;
+    line-height: 20px;
+    padding-right: 8px;
+    padding-left: 8px;
+    &:not(.l-padding-none) {
+        padding-top: 6px;
+        padding-bottom: 7px;
+    }
+    width: 100%;
+}
+
+.t-button-inline:not(.l-margin-none) {
+    margin-top: 22px;
+}
+
+button:not(.t-button-inline), .t-button:not(.t-button-inline) {
+    clear: both;
+}
+
+button, .t-button {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    border: 0;
+    color: $black;
+    &:not(.is-disabled), &:not(.t-active) {
+        background: $earlySunSetOrange;
+        background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $earlySunSetOrange), color-stop(100%, $orange));
+        background: -webkit-linear-gradient(top, $earlySunSetOrange, $orange);
+        background: -moz-linear-gradient(top, $earlySunSetOrange, $orange);
+        background: -o-linear-gradient(top, $earlySunSetOrange, $orange);
+        background: linear-gradient(top, $earlySunSetOrange, $orange);
+    }
+    &.t-active {
+        color: $blue;
+        background: $lightestGray;
+        background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $lightestGray), color-stop(100%, $lightGray));
+        background: -webkit-linear-gradient(top, $lightestGray, $lightGray);
+        background: -moz-linear-gradient(top, $lightestGray, $lightGray);
+        background: -o-linear-gradient(top, $lightestGray, $lightGray);
+        background: linear-gradient(top, $lightestGray, $lightGray);
+    }
+    color: $black;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+    &:not(.t-small-padding) {
+        padding-top: 7px;
+        padding-bottom: 8px;
+    }
+    &:not(.t-small-width) {
+        min-width: 75px;
+    }
+    &.t-small-width {
+        min-width: 35px;
+    }
+    outline: 0;
+    overflow: visible;
+    white-space: normal;
+    text-align: center;
+    text-decoration: none;
+}
+
+button-hover, button:hover, .t-button:hover {
+    color: $black;
+    text-decoration: none;
+    
+    &:not(.is-disabled),  &:not(.t-active) {
+        background: $orange;
+        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $orange), color-stop(100%, $sunOrange));
+        background-image: -webkit-linear-gradient(top,  $orange, $sunOrange);
+        background-image: -moz-linear-gradient(top, $orange, $sunOrange);
+        background-image: -o-linear-gradient(top, $orange, $sunOrange);
+        background-image: linear-gradient(top, $orange, $sunOrange);
+    }
+    &.t-active {
+        color: $blue;
+        background: $lightGray;
+        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $lightGray), color-stop(100%, $lightestGray));
+        background-image: -webkit-linear-gradient(top,  $lightGray, $lightestGray);
+        background-image: -moz-linear-gradient(top, $lightGray, $lightestGray);
+        background-image: -o-linear-gradient(top, $lightGray, $lightestGray);
+        background-image: linear-gradient(top, $lightGray, $lightestGray);
+    }
+}
+
+.t-or-button, a.t-or-button {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    border: 0;
+    background: $lightestGray;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $lightestGray), color-stop(100%, $lightGray));
+    background: -webkit-linear-gradient(top, $lightestGray, $lightGray);
+    background: -moz-linear-gradient(top, $lightestGray, $lightGray);
+    background: -o-linear-gradient(top, $lightestGray, $lightGray);
+    background: linear-gradient(top, $lightestGray, $lightGray);
+    color: $black;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 7px 8px 8px 8px;
+    min-width: 75px;
+    outline: 0;
+    overflow: visible;
+    white-space: normal;
+    text-align: center;
+    text-decoration: none;
+}
+
+.t-or-button:hover, a.t-or-button:hover {
+    color: $black;
+    text-decoration: none;
+    background: $lightGray;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $lightGray), color-stop(100%, $lightestGray));
+    background-image: -webkit-linear-gradient(top,  $lightGray, $lightestGray);
+    background-image: -moz-linear-gradient(top, $lightGray, $lightestGray);
+    background-image: -o-linear-gradient(top, $lightGray, $lightestGray);
+    background-image: linear-gradient(top, $lightGray, $lightestGray);
+}
+
+button:disabled, button.is-disabled {
+    background: $lightestGray;
+    background-image: none;
+    background-color: $lightestGray;
+    cursor: not-allowed;
+}
+
+input:disabled, input.is-disabled {
+    background: $lightestGray;
+    cursor: not-allowed;
+}
+
+input.is-error, select.is-error {
+    border:1px solid $errorRed;
+}
+
+label.is-error {
+    color: $errorRed;
+}
+
+label.t-label-button {
+    
+    &:not(.is-disabled) {
+        background: $orange;
+    }
+}
+
+label.t-label-button:hover {
+    
+    &:not(.is-disabled) {
+        background: $earlySunSetOrange;
+        background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $earlySunSetOrange), color-stop(100%, $orange));
+        background: -webkit-linear-gradient(top, $earlySunSetOrange, $orange);
+        background: -moz-linear-gradient(top, $earlySunSetOrange, $orange);
+        background: -o-linear-gradient(top, $earlySunSetOrange, $orange);
+        background: linear-gradient(top, $earlySunSetOrange, $orange);
+    }
+}
+
+input[type="radio"]:checked+div.is-label-container {
+    
+    -moz-box-shadow: 2px 2px 2px $gray;
+    -webkit-box-shadow: 2px 2px 2px $gray;
+    box-shadow: 2px 2px 2px $gray;
+    
+    border: 2px solid $black;
+    
+    label.t-label-button:not(.is-disabled) {
+        background: $earlySunSetOrange;
+        background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $earlySunSetOrange), color-stop(100%, $orange));
+        background: -webkit-linear-gradient(top, $earlySunSetOrange, $orange);
+        background: -moz-linear-gradient(top, $earlySunSetOrange, $orange);
+        background: -o-linear-gradient(top, $earlySunSetOrange, $orange);
+        background: linear-gradient(top, $earlySunSetOrange, $orange);
+    }
+}

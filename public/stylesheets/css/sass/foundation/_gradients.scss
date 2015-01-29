@@ -1,0 +1,15 @@
+/* 
+    Created on : Dec 16, 2014, 12:22:19 AM
+    Author     : mikejecko
+*/
+
+@import "foundation/colors";
+
+.t-gradient-gray {
+    background: $lightGray;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $lightGray), color-stop(100%, $gray));
+    background: -webkit-linear-gradient(top, $lightGray, $gray);
+    background: -moz-linear-gradient(top, $lightGray, $gray);
+    background: -o-linear-gradient(top, $lightGray, $gray);
+    background: linear-gradient(top, $lightGray, $gray);
+}

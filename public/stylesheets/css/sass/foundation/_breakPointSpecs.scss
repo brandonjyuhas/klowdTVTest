@@ -1,0 +1,165 @@
+/* 
+    Created on : Aug 15, 2014, 4:53:18 PM
+    Author     : mikejecko
+*/
+
+.is-hiddeni-pre-xs { display: none; }
+.is-hiddeni-pre-s { display: none; }
+.is-hiddeni-pre-sm { display: none; }
+.is-hiddeni-pre-m { display: none; }
+.is-hiddeni-pre-mml { display: none; }
+.is-hiddeni-pre-ml { display: none; }
+.is-hiddeni-pre-mll { display: none; }
+.is-hiddeni-pre-l { display: none; }
+.is-hiddeni-pre-xl { display: none; }
+.is-hiddeni-pre-xxl { display: none; }
+.is-hiddeni-pre-xxxl { display: none; }
+
+.is-hiddeni-post-xs { display: block; }
+.is-hiddeni-post-s { display: block; }
+.is-hiddeni-post-sm { display: block; }
+.is-hiddeni-post-m { display: block; }
+.is-hiddeni-post-mml { display: block; }
+.is-hiddeni-post-ml { display: block; }
+.is-hiddeni-post-mll { display: block; }
+.is-hiddeni-post-l { display: block; }
+.is-hiddeni-post-xl { display: block; }
+.is-hiddeni-post-xxl { display: block; }
+.is-hiddeni-post-xxxl { display: block; }
+
+.is-hiddenb-pre-xs { display: none; }
+.is-hiddenb-pre-s { display: none; }
+.is-hiddenb-pre-sm { display: none; }
+.is-hiddenb-pre-m { display: none; }
+.is-hiddenb-pre-mml { display: none; }
+.is-hiddenb-pre-ml { display: none; }
+.is-hiddenb-pre-mll { display: none; }
+.is-hiddenb-pre-l { display: none; }
+.is-hiddenb-pre-xl { display: none; }
+.is-hiddenb-pre-xxl { display: none; }
+.is-hiddenb-pre-xxxl { display: none; }
+
+.is-hiddenb-post-xs { display: block; }
+.is-hiddenb-post-s { display: block; }
+.is-hiddenb-post-sm { display: block; }
+.is-hiddenb-post-m { display: block; }
+.is-hiddenb-post-mml { display: block; }
+.is-hiddenb-post-ml { display: block; }
+.is-hiddenb-post-mll { display: block; }
+.is-hiddenb-post-l { display: block; }
+.is-hiddenb-post-xl { display: block; }
+.is-hiddenb-post-xxl { display: block; }
+.is-hiddenb-post-xxxl { display: block; }
+
+.is-hiddenib-pre-xs { display: none; }
+.is-hiddenib-pre-s { display: none; }
+.is-hiddenib-pre-sm { display: none; }
+.is-hiddenib-pre-m { display: none; }
+.is-hiddenib-pre-mml { display: none; }
+.is-hiddenib-pre-mll { display: none; }
+.is-hiddenib-pre-mll { display: none; }
+.is-hiddenib-pre-l { display: none; }
+.is-hiddenib-pre-xl { display: none; }
+.is-hiddenib-pre-xxl { display: none; }
+.is-hiddenib-pre-xxxl { display: none; }
+
+.is-hiddenib-post-xs { display: inline-block; }
+.is-hiddenib-post-s { display: inline-block; }
+.is-hiddenib-post-sm { display: nline-block; }
+.is-hiddenib-post-m { display: inline-block; }
+.is-hiddenib-post-mml { display: inline-block; }
+.is-hiddenib-post-ml { display: inline-block; }
+.is-hiddenib-post-mll { display: inline-block; }
+.is-hiddenib-post-l { display: inline-block; }
+.is-hiddenib-post-xl { display: inline-block; }
+.is-hiddenib-post-xxl { display: inline-block; }
+.is-hiddenib-post-xxxl { display: inline-block; }
+
+@include breakpoint(XS) {
+    .is-hiddeni-pre-xs { display: initial; }
+    .is-hiddeni-post-xs { display: none; }
+    .is-hiddenb-pre-xs { display: block; }
+    .is-hiddenb-post-xs { display: none; }
+    .is-hiddenib-pre-xs { display: inline-block; }
+    .is-hiddenib-post-xs { display: none; }
+}
+@include breakpoint(S) {
+    .is-hiddeni-pre-s { display: initial; }
+    .is-hiddeni-post-s { display: none; }
+    .is-hiddenb-pre-s { display: block; }
+    .is-hiddenb-post-s { display: none; }
+    .is-hiddenib-pre-s { display: inline-block; }
+    .is-hiddenib-post-s { display: none; }
+}
+@include breakpoint(SM) {
+    .is-hiddeni-pre-sm { display: initial; }
+    .is-hiddeni-post-sm { display: none; }
+    .is-hiddenb-pre-sm { display: block; }
+    .is-hiddenb-post-sm { display: none; }
+    .is-hiddenib-pre-sm { display: inline-block; }
+    .is-hiddenib-post-sm { display: none; }
+}
+@include breakpoint(M) {
+    .is-hiddeni-pre-m { display: initial; }
+    .is-hiddeni-post-m { display: none; }
+    .is-hiddenb-pre-m { display: block; }
+    .is-hiddenb-post-m { display: none; }
+    .is-hiddenib-pre-m { display: inline-block; }
+    .is-hiddenib-post-m { display: none; }
+}
+@include breakpoint(MML) {
+    .is-hiddeni-pre-mml { display: initial; }
+    .is-hiddeni-post-mml { display: none; }
+    .is-hiddenb-pre-mml { display: block; }
+    .is-hiddenb-post-mml { display: none; }
+    .is-hiddenib-pre-mml { display: inline-block; }
+    .is-hiddenib-post-mml { display: none; }
+}
+@include breakpoint(ML) {
+    .is-hiddeni-pre-ml { display: initial; }
+    .is-hiddeni-post-ml { display: none; }
+    .is-hiddenb-pre-ml { display: block; }
+    .is-hiddenb-post-ml { display: none; }
+    .is-hiddenib-pre-ml { display: inline-block; }
+    .is-hiddenib-post-ml { display: none; }
+}
+@include breakpoint(MLL) {
+    .is-hiddeni-pre-mll { display: initial; }
+    .is-hiddeni-post-mll { display: none; }
+    .is-hiddenb-pre-mll { display: block; }
+    .is-hiddenb-post-mll { display: none; }
+    .is-hiddenib-pre-mll { display: inline-block; }
+    .is-hiddenib-post-mll { display: none; }
+}
+@include breakpoint(L) {
+    .is-hiddeni-pre-l { display: initial; }
+    .is-hiddeni-post-l { display: none; }
+    .is-hiddenb-pre-l { display: block; }
+    .is-hiddenb-post-l { display: none; }
+    .is-hiddenib-pre-l { display: inline-block; }
+    .is-hiddenib-post-l { display: none; }
+}
+@include breakpoint(XL) {
+    .is-hiddeni-pre-xl { display: initial; }
+    .is-hiddeni-post-xl { display: none; }
+    .is-hiddenb-pre-xl { display: block; }
+    .is-hiddenb-post-xl { display: none; }
+    .is-hiddenib-pre-xl { display: inline-block; }
+    .is-hiddenib-post-xl { display: none; }
+}
+@include breakpoint(XXL) {
+    .is-hiddeni-pre-xxl { display: initial; }
+    .is-hiddeni-post-xxl { display: none; }
+    .is-hiddenb-pre-xxl { display: block; }
+    .is-hiddenb-post-xxl { display: none; }
+    .is-hiddenib-pre-xxl { display: inline-block; }
+    .is-hiddenib-post-xxl { display: none; }
+}
+@include breakpoint(XXXL) {
+    .is-hiddeni-pre-xxxl { display: initial; }
+    .is-hiddeni-post-xxxl { display: none; }
+    .is-hiddenb-pre-xxxl { display: block; }
+    .is-hiddenb-post-xxxl { display: none; }
+    .is-hiddenib-pre-xxxl { display: inline-block; }
+    .is-hiddenib-post-xxxl { display: none; }
+}

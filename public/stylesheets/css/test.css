@@ -1,0 +1,108 @@
+body {
+  background: white;
+}
+
+#EPG {
+  width: 100%;
+}
+
+#time {
+  width: 99%;
+  display: inline-block;
+  position: relative;
+  margin: 0.5%;
+}
+
+.half-hour {
+  width: 20%;
+  height: 10%;
+  margin: 0 auto;
+  background: black;
+  display: inline-block;
+  float: left;
+  color: white;
+
+}
+
+.half-hour p {
+  padding-left: 3px;
+  padding-top: 2px;
+}
+
+#channels {
+  width: 100%;
+  display: inline-block;
+  padding-top: 35%;
+}
+
+.time img {
+  position: absolute;
+  display: inline;
+  height: 100%;
+  width: auto;
+  top: 0;
+}
+
+#next {
+  position: absolute;
+  display: inline;
+  right: 0;
+    height: 100%;
+}
+
+#previous {
+  position: absolute;
+  display: inline;
+  right: 20;
+    height: 100%;
+}
+
+.height-15-percent {
+  height: 10%;
+  width: auto;
+}
+
+#programs {
+  display: inline-block;
+  vertical-align: top;
+  overflow-x: visible;
+  width: 100%;
+}
+
+.programs li {
+  display: inline-block;
+  vertical-align: top;
+  background-color: #818077;
+  height: 9%;
+  overflow: hidden;
+  margin: .5%;
+  color: white;
+  text-align: center;
+}
+
+.programs.active li {
+  background-color: green;
+}
+
+#programs ul {
+  width: 100%;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.vertical-align-top {
+  vertical-align: top;
+}
+
+.placeholder {
+  width: 100%;
+}
+
+.tooltip-theme {
+  border-radius: 5px;
+  border: 2px solid #000;
+  background: #4c4c4c;
+  color: #fff;
+}
