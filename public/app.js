@@ -1,106 +1,6 @@
-var fakeData =[
-    {
-      airings: [
-        {
-          program: {
-            title: "How I Met Your Mother"
-          },
-          duration: 30
-        },
-        {
-          program: {
-            title: "How I Met Your Mother"
-          },
-          duration: 30
-        },
-        {
-          program: {
-            title: "Seinfeld"
-          },
-          duration: 30
-        },
-        {
-          program: {
-            title: "Dr. Oz Show"
-          },
-          duration: 60
-        }
-
-
-      ],
-      id: 1121
-    },
-    {
-      airings: [
-        {
-          program: {
-            title: "James Bond"
-          },
-          duration: 90
-        },
-        {
-          program: {
-            title: "State Of The Union"
-          },
-          duration: 150
-        },
-        {
-          program: {
-            title: "How I Met Your Mother"
-          },
-          duration: 30
-        }
-
-      ],
-      id: 1123
-    },
-    {
-      airings: [
-        {
-          program: {
-            title: "Scrubs"
-          },
-          duration: 30
-        },
-        {
-          program: {
-            title: "Scrubs"
-          },
-          duration: 30
-        },
-        {
-          program: {
-            title: "The Colbert Report"
-          },
-          duration: 30
-        },
-        {
-          program: {
-            title: "The Daily Show"
-          },
-          duration: 30
-        },
-        {
-          program: {
-            title: "Midnight Tonight"
-          },
-          duration: 30
-        }
-
-      ],
-      id: 1125
-    }
-  ]
-
 
 
 $('document').ready(function(){
-
-
-
-
-
-
 
   var klowdEPG = {
 
@@ -108,6 +8,14 @@ $('document').ready(function(){
     apikey: "umstwy76p8shpfkxhugr6a2v",
     baseUrl: "http://data.tmsapi.com/v1/lineups/USA-DC01098-X/grid",
     zipcode: "20002",
+
+    findEPGSize: function() {
+        breakpoint = klowdjs.breakpoints.getBreakpoint();
+        if (breakpoint > 768) { epgHours = 2; epgMinutes = 30; } else
+        if (breakpoint > 560) { epgHours = 1; epgMinutes = 30; } else
+        { epgHours = 1; epgMinutes = 0; }
+        return { hours: epgHours, minutes: epgMinutes };
+    },
 
 
     findCorrectISOTime: function(date){
@@ -159,9 +67,16 @@ $('document').ready(function(){
       }
     },
 
-    fillEPG: function(data, today){
+    fillEPG: function(data, today, hours, minutes){
         for(var j = 0; j < data.length; j++){
-          $('#programGuide').append("<div class='grid grid-pad'><div class='col-2-12'><div class='content'><img src='/images/" + data[j]["stationId"] + ".png' class='height-15-percent' /></div></div><div class='col-10-12'><div class='content'><ul class='programs inactive' channel-id='" + data[j]["stationId"] + "'></ul></div></div></div>");
+          if (klowdjs.breakpoints.getBreakpoint() < 768){
+            column = "<div class='grid grid-pad'><div class='col-2-12'><div class='content station'><img src='/images/" + data[j]["stationId"] + ".png' class='height-15-percent' /><p>" + data[j]["channel"] + ": " + data[j]["callSign"] + "</p></div></div><div class='col-10-12'><div class='content'><ul class='programs inactive' channel-id='" + data[j]["stationId"] + "'></ul></div></div></div>"
+          }
+          else {
+            column = "<div class='grid grid-pad'><div class='col-2-12'><div class='content'><img src='/images/" + data[j]["stationId"] + ".png' class='height-15-percent' /></div></div><div class='col-10-12'><div class='content'><ul class='programs inactive' channel-id='" + data[j]["stationId"] + "'></ul></div></div></div>"
+          }
+
+          $('#programGuide').append(column);
           if (this.activeStation === data[j]["stationId"]){
             $('.programs').eq(j).addClass('active');
           }
@@ -172,7 +87,7 @@ $('document').ready(function(){
 
           // duration of 2:30 minute block
 
-          var durationLeft = 150;
+          var durationLeft = (hours * 60) + minutes;
 
           for(var i = 0; i < airings.length; i++){
             // Find how much time is left of first program
@@ -189,16 +104,11 @@ $('document').ready(function(){
               program = airings[i];
 
               // Handle finding all info here, and then push into one string that you'll append
-              console.log(program["program"]["title"]);
-              console.log(program["program"]["shortDescription"]);
 
 
 
               episodeTitle = this.isUndefined(program["program"]["episodeTitle"]);
               shortDescription = this.isUndefined(program["program"]["shortDescription"]).replace(/"/g,"'");
-
-              console.log(shortDescription);
-              console.log(" ");
 
               cast = "";
 
@@ -244,7 +154,9 @@ $('document').ready(function(){
                   + program["program"]["title"]
                   + "</li>");
                 currentProgram = $('.programs li').last();
-                minuteDiff = (((program["duration"]) / 30 ) * 20 - 1);
+                if (hours === 2)   { minuteDiff = (((program["duration"]) / 30 ) * 20 - 1);  } else
+                if (minutes === 30){ minuteDiff = (((program["duration"]) / 30 ) * 33.33 - 1)} else
+                                   { minuteDiff = (((program["duration"]) / 30 ) * 50 - 1);  }
                 if(minuteDiff > 100){
                   minuteDiff = "99%";
                 }
@@ -260,18 +172,18 @@ $('document').ready(function(){
 
       },
 
-    addTimeBlock: function(time){
+    addTimeBlock: function(time, hours, minutes){
       time = new Date(time);
-      time = new Date(time.setHours(time.getHours() + 2));
-      time = new Date(time.setMinutes(time.getMinutes() + 30));
+      time = new Date(time.setHours(time.getHours() + hours));
+      time = new Date(time.setMinutes(time.getMinutes() + minutes));
       $('.date').text(time.toString().substr(0,15));
       return this.findCorrectISOTime(time);
     },
 
-    removeTimeBlock: function(time){
+    removeTimeBlock: function(time, hours, minutes){
       time = new Date(time);
-      time = new Date(time.setHours(time.getHours() - 2));
-      time = new Date(time.setMinutes(time.getMinutes() - 30));
+      time = new Date(time.setHours(time.getHours() - hours));
+      time = new Date(time.setMinutes(time.getMinutes() - minutes));
       $('.date').text(time.toString().substr(0,15));
       return this.findCorrectISOTime(time);
     },
@@ -295,46 +207,58 @@ $('document').ready(function(){
       return hours + minutes + meridiem;
     },
 
-    setTimeBar: function(today){
-        for (var i = 0; i < 5; i++){
-        var date = new Date(new Date(today).getTime() + ((i) * 30)*60000);
-        var hours = date.getHours();
-        var minutes = date.getMinutes();
-        $('.half-hour').eq(i).html("<p>" + this.getHoursMinutes(hours, minutes) + "</p>");
-      }
+    setTimeBar: function(today, hours, minutes){
+        var length = (hours * 2);
+        if (minutes > 0){
+          length += 1;
+        }
+        for (var i = 0; i < length; i++){
+          var date = new Date(new Date(today).getTime() + ((i) * 30)*60000);
+          var hours = date.getHours();
+          var minutes = date.getMinutes();
+          $('#time').append('<li class="half-hour"><p>' + this.getHoursMinutes(hours, minutes) + '</p></li>');
+        }
+        if (length === 5){ $('.half-hour').width('20%'); } else
+        if (length === 3){ $('.half-hour').width('33.33%'); } else
+                         { $('.half-hour').width('50%'); }
+    },
+
+    addTime: function(){
+      $('#next').removeClass('next');
+      $('#programGuide').empty();
+      $('.half-hour').remove();
+      hoursMins = klowd.findEPGSize();
+      time = klowd.addTimeBlock(time, hoursMins["hours"], hoursMins["minutes"]);
+      klowd.setEPG(time, hoursMins["hours"], hoursMins["minutes"]);
+
+    },
+
+    removeTime: function(){
+      $('#previous').removeClass('previous');
+      $('#programGuide').empty();
+      $('.half-hour').remove();
+      hoursMins = klowd.findEPGSize();
+      time = klowd.removeTimeBlock(time, hoursMins["hours"], hoursMins["minutes"]);
+      klowd.setEPG(time, hoursMins["hours"], hoursMins["minutes"]);
     },
 
     init: function(){
       klowd = this;
       $('.date').text(new Date().toString().substr(0,15));
       time = klowd.findCorrectISOTime(new Date());
-      klowd.setEPG(time);
-
-      $('#next').on('click', function(){
-        if ($(this).data("executing")) return;
-
-        $('#programGuide').empty();
-        time = klowd.addTimeBlock(time);
-        klowd.setEPG(time);
-      });
-
-      $('#previous').on('click', function(){
-        if ($(this).data("executing")){
-          return;
-        }
-        $('#programGuide').empty();
-        time = klowd.removeTimeBlock(time);
-        klowd.setEPG(time);
-      });
+      hoursMins = klowd.findEPGSize();
+      klowd.setEPG(time, hoursMins["hours"], hoursMins["minutes"]);
+      $('.next').on('click', this.addTime);
+      $('.previous').on('click', this.removeTime);
     },
 
-    setEPG: function(today){
+    setEPG: function(today, hours, minutes){
 
       // Send query
       klowd = this;
 
       // Determine ISO 8601 in Zulu time (What Gracenote Uses)
-      klowd.setTimeBar(today);
+      klowd.setTimeBar(today, hours, minutes);
       // console.log(klowd.baseUrl);
 
       if (today === klowd.findCorrectISOTime(new Date())){
@@ -359,22 +283,26 @@ $('document').ready(function(){
       })
       .done(function(data){
         console.log(data);
-        klowd.fillEPG(data, today);
+        klowd.fillEPG(data, today, hours, minutes);
         $('.tooltip').tooltipster({
         trigger: 'click',
         contentAsHTML: true,
         interactive: true,
         functionReady: function(){
             $('.change-channel').on( 'click', function(){
-              channelId = $(this).attr('channel-id');
-              $('.programs').removeClass('active');
-              $('.programs[channel-id="' + channelId +'"]').addClass('active');
-              klowd.activeStation = channelId;
-              $('.tooltip').tooltipster('hide');
-            });
-          }
-        });
+            channelId = $(this).attr('channel-id');
+            $('.programs').removeClass('active');
+            $('.programs[channel-id="' + channelId +'"]').addClass('active');
+            klowd.activeStation = channelId;
+            $('.tooltip').tooltipster('hide');
+          });
+        }
+
       });
+
+      $('#next').addClass('next');
+      $('#previous').addClass('previous');
+  });
 
       // this.fillEPG(fakeData);
       // $('#next').on('click' this.)

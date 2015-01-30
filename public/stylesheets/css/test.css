@@ -14,14 +14,24 @@ body {
 }
 
 .half-hour {
-  width: 20%;
   height: 10%;
   margin: 0 auto;
   background: black;
   display: inline-block;
   float: left;
   color: white;
+}
 
+.20-percent-width {
+  width: 20%;
+}
+
+.33-percent-width {
+  width: 33.3333%;
+}
+
+.50-percent-width {
+  width: 50%;
 }
 
 .half-hour p {
@@ -47,14 +57,14 @@ body {
   position: absolute;
   display: inline;
   right: 0;
-    height: 100%;
+  height: 100%;
 }
 
 #previous {
   position: absolute;
   display: inline;
-  right: 30;
-    height: 100%;
+  right: 35;
+  height: 100%;
 }
 
 .height-15-percent {
@@ -91,6 +101,17 @@ body {
 
 #programs ul {
   width: 100%;
+}
+
+.content img {
+  display: inline-block;
+}
+
+.station p {
+  display: inline-block;
+  float: right;
+  margin-right: 1%;
+  font-size: 20px;
 }
 
 .inline-block {
