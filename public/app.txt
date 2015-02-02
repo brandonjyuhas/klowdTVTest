@@ -74,10 +74,10 @@ $('document').ready(function(){
       for(var j = 0; j < data.length; j++){
         // Check to see if we are in mobile view or not
         if (klowdjs.breakpoints.getBreakpoint() < 768){
-          var row = "<div class='grid grid-pad'><div class='col-2-12'><div class='content station'><img src='/images/" + data[j]["stationId"] + ".png' class='height-10-percent' /><p>" + data[j]["channel"] + ": " + data[j]["callSign"] + "</p></div></div><div class='col-10-12'><div class='content'><ul class='programs inactive' channel-id='" + data[j]["stationId"] + "'></ul></div></div></div>"
+          var row = "<div class='grid grid-pad'><div class='col-2-12'><div class='content station'><img src='/images/" + data[j]["stationId"] + ".png' class='height-15-percent' /><p>" + data[j]["channel"] + ": " + data[j]["callSign"] + "</p></div></div><div class='col-10-12'><div class='content'><ul class='programs inactive' channel-id='" + data[j]["stationId"] + "'></ul></div></div></div>"
         }
         else {
-          var row = "<div class='grid grid-pad'><div class='col-2-12'><div class='content'><img src='/images/" + data[j]["stationId"] + ".png' class='height-10-percent' /></div></div><div class='col-10-12'><div class='content'><ul class='programs inactive' channel-id='" + data[j]["stationId"] + "'></ul></div></div></div>"
+          var row = "<div class='grid grid-pad'><div class='col-2-12'><div class='content'><img src='/images/" + data[j]["stationId"] + ".png' class='height-15-percent' /></div></div><div class='col-10-12'><div class='content'><ul class='programs inactive' channel-id='" + data[j]["stationId"] + "'></ul></div></div></div>"
         }
 
         // Add the row to the table
