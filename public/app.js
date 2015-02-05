@@ -4,12 +4,10 @@ $('document').ready(function(){
 
     // Active station will be pulled from URL possibly
     activeStation: "23321",
-    // Array of all stations
-    stationIds: [11069,23321,11450,10051,10035,10057,11163],
     // Stations the user is subscribed to
-    userStations: [11069,23321,10051,11163],
+    userStations: [89093,78763,62628,33691,90880],
     apikey: "umstwy76p8shpfkxhugr6a2v",
-    baseUrl: "http://data.tmsapi.com/v1/lineups/USA-DC01098-X/grid",
+    baseUrl: "http://data.tmsapi.com/v1/lineups/USA-VA70448-DEFAULT/grid",
     zipcode: "20002",
 
     // Use klowdjs to determine how many hours to show
@@ -70,14 +68,15 @@ $('document').ready(function(){
 
     // Actually create the elements that are added to the EPG
     fillEPG: function(data, today, hours, minutes){
+      console.log(data);
       // Parse through the data provided by gracenote
       for(var j = 0; j < data.length; j++){
         // Check to see if we are in mobile view or not
         if (klowdjs.breakpoints.getBreakpoint() < 768){
-          var row = "<div class='grid grid-pad'><div class='col-2-12'><div class='content station'><img src='/images/" + data[j]["stationId"] + ".png' class='height-10-percent' /><p>" + data[j]["channel"] + ": " + data[j]["callSign"] + "</p></div></div><div class='col-10-12'><div class='content'><ul class='programs inactive' channel-id='" + data[j]["stationId"] + "'></ul></div></div></div>"
+          var row = "<div class='grid grid-pad'><div class='col-2-12'><div class='content station'><div class='width-25-percent inline-block'><img src='https://www.klowdtv.com/klowd/images/channels/" + data[j]["callSign"].toLowerCase() + "/logo_small.png' class=' inline-block' /></div><div class='stationInfo inline-block text-align-center'></div></div></div><div class='col-10-12'><div class='content'><ul class='programs inactive' channel-id='" + data[j]["stationId"] + "'></ul></div></div></div>"
         }
         else {
-          var row = "<div class='grid grid-pad'><div class='col-2-12'><div class='content'><img src='/images/" + data[j]["stationId"] + ".png' class='height-10-percent' /></div></div><div class='col-10-12'><div class='content'><ul class='programs inactive' channel-id='" + data[j]["stationId"] + "'></ul></div></div></div>"
+          var row = "<div class='grid grid-pad'><div class='col-2-12'><div class='content'><div class='inline-block image-container width-100-percent'><img src='https://www.klowdtv.com/klowd/images/channels/" + data[j]["callSign"].toLowerCase() + "/logo_small.png' /></div></div></div><div class='col-10-12'><div class='content'><ul class='programs inactive' channel-id='" + data[j]["stationId"] + "'></ul></div></div></div>"
         }
 
         // Add the row to the table
@@ -104,42 +103,42 @@ $('document').ready(function(){
 
           // Make sure that there's time left in the epg row
           if(durationLeft > 0){
-            program = airings[i];
+            var program = airings[i];
             if (durationLeft - program["duration"] < 0) {
               program["duration"] = durationLeft;
             }
-            program = airings[i];
 
-            // Handle finding all info here, and then push into one string that you'll append to the row
+            // Handle universal attributes here, and desktop specific in if statement
             // Replace all double quotes so that we don't break out of the title attribute
-            episodeTitle = this.isUndefined(program["program"]["episodeTitle"]).replace(/"/g,"'");
-            shortDescription = this.isUndefined(program["program"]["shortDescription"]).replace(/"/g,"'");
+            var episodeTitle = this.isUndefined(program["program"]["episodeTitle"]).replace(/"/g,"'");
 
-            // No button if it's the channel you're on
-            if(data[j]["stationId"] === this.activeStation) {
-              button = "";
-            }
-            // Link to channel if you have the channel
-            else if(this.inArray(data[j]["stationId"].toString(), this.userStations)){
-                button = "&lt;button class=&quot;change-channel&quot; channel-id=&quot;"
-                + data[j]["stationId"]
-                + "&quot; &gt; Switch to Channel &lt;/button&gt;"
-            }
-            // Link to purchase the channel if you do not
-            else {
-              button = "&lt;button class=&quot;purchase&quot; channel-id=&quot;"
-                + data[j]["stationId"]
-                + "&quot; &gt; Purchase Channel &lt;/button&gt;"
-            }
-
-            // If top cast is provided by gracenote, created a ul with each actor as an li
-            var cast = "";
-            if (program["program"]["topCast"]){
-              cast += "&lt;ul&gt;"
-              for (var actor = 0; actor < program["program"]["topCast"].length; actor++){
-                cast += "&lt;li&gt;" + program["program"]["topCast"][actor] + "&lt;/li&gt;"
+            if(klowdjs.breakpoints.getBreakpoint() < 768){
+              if(data[j]["stationId"].toString() === this.activeStation){
+                var button = "";
+              } else
+              if(this.inArray(data[j]["stationId"].toString(), this.userStations)){
+                button = "<a href='https://klowdtv.com/myKlowd/watchMyKlowd.ktv?watch=" + data[j]["callSign"].toLowerCase() + "'><button class='change-channel inline-block vertical-align-top' channel-id='" + data[j]["stationId"] + "'>Switch to Channel</button></a>";
               }
-              cast += "&lt;/ul&gt;"
+              else {
+                button = "<a href='https://klowdtv.com/myKlowd/editSubscription.ktv'><button class='inline-block vertical-align-top' channel-id='" + data[j]["stationId"] + "'>Purchase Channel</button></a>";
+              }
+            }
+            else{
+              // Link to channel if you have the channel
+              if(data[j]["stationId"].toString() === this.activeStation){
+                var button = "";
+              } else
+              if(this.inArray(data[j]["stationId"].toString(), this.userStations)){
+                  button = "&lt;a href=&quot;https://klowdtv.com/myKlowd/watchMyKlowd.ktv?watch=" + data[j]["callSign"].toLowerCase() + "&quot;&gt;&lt;button class=&quot;change-channel&quot; channel-id=&quot;"
+                  + data[j]["stationId"]
+                  + "&quot; &gt; Switch to Channel &lt;/button&gt;&lt;/a&gt;";
+              }
+              // Link to purchase the channel if you do not
+              else {
+                button = "&lt;a href=&quot;https://klowdtv.com/myKlowd/editSubscription.ktv&quot;&gt;&lt;button class=&quot;purchase&quot; channel-id=&quot;"
+                  + data[j]["stationId"]
+                  + "&quot; &gt; Purchase Channel &lt;/button&gt;&lt;/a&gt;";
+              }
             }
 
             // Need to figure out how to avoid blank spaces where an element that isn't large enough to be displayed
@@ -147,20 +146,46 @@ $('document').ready(function(){
               program["duration"] = 0;
             }
 
-            // Append a li for the program, combining all of the information we have into the tooltip
             if(program["duration"] > 0){
-              $('.programs').eq(j).append("<li class='tooltip' title=\"&lt;h2&gt;"
-                + (program["program"]["title"])
-                + "&lt;/h2&gt; &lt;h3&gt;"
-                + episodeTitle
-                + "&lt;/h3&gt; &lt;p&gt;"
-                + shortDescription
-                + " &lt;/p&gt; &lt;/br&gt; "
-                + cast
-                + button
-                + "\" class='tooltip'>"
-                + program["program"]["title"]
-                + "</li>");
+              // Skip steps if mobile view
+              if (klowdjs.breakpoints.getBreakpoint() < 768){
+                if(i === 0){
+                  if(episodeTitle != ''){
+                    episodeTitle = ": " + episodeTitle;
+                  }
+                  $('.stationInfo').eq(j).html("<h3>" + program["program"]["title"] + episodeTitle + "</h3>");
+                  $('.station').eq(j).append(button);
+                }
+                $('.programs').eq(j).append("<li class='centered-text-li'>"+ program["program"]["title"] +"</li>");
+              }
+
+              else {
+                var shortDescription = this.isUndefined(program["program"]["shortDescription"]).replace(/"/g,"'");
+
+                // If top cast is provided by gracenote, created a ul with each actor as an li
+                var cast = "";
+                if (program["program"]["topCast"]){
+                  cast += "&lt;ul&gt;"
+                  for (var actor = 0; actor < program["program"]["topCast"].length; actor++){
+                    cast += "&lt;li&gt;" + program["program"]["topCast"][actor] + "&lt;/li&gt;"
+                  }
+                  cast += "&lt;/ul&gt;"
+                }
+                console.log('In media query');
+              // Append a li for the program, combining all of the information we have into the tooltip
+                $('.programs').eq(j).append("<li class='tooltip centered-text-li' title=\"&lt;h2&gt;"
+                  + (program["program"]["title"])
+                  + "&lt;/h2&gt; &lt;h3&gt;"
+                  + episodeTitle
+                  + "&lt;/h3&gt; &lt;p&gt;"
+                  + shortDescription
+                  + " &lt;/p&gt; &lt;/br&gt; "
+                  + cast
+                  + button
+                  + "\" class='tooltip'>"
+                  + program["program"]["title"]
+                  + "</li>");
+              }
               currentProgram = $('.programs li').last();
               // Determine how large li will be based on how wide the timeline is are
               if (hours === 2)   { minuteDiff = (((program["duration"]) / 30 ) * 20 - 1);  } else
@@ -176,6 +201,7 @@ $('document').ready(function(){
               durationLeft -= program["duration"];
             }
           }
+
           // If we're out of time in the display, break out of the for loop
           else {
             break;
@@ -232,7 +258,7 @@ $('document').ready(function(){
           var date = new Date(new Date(today).getTime() + ((i) * 30)*60000);
           var hours = date.getHours();
           var minutes = date.getMinutes();
-          $('#time').append('<li class="half-hour"><p>' + this.getHoursMinutes(hours, minutes) + '</p></li>');
+          $('#time').append('<li class="half-hour"><p class="pushed-to-bottom">' + this.getHoursMinutes(hours, minutes) + '</p></li>');
         }
         // Determine size based on thirty min blocks
         if (length === 5){ $('.half-hour').width('20%'); } else
@@ -240,41 +266,9 @@ $('document').ready(function(){
                          { $('.half-hour').width('50%'); }
     },
 
-    // Function attached to next button that moves the epg forward
-    addTime: function(){
-      // Remove the class temporarily to prevent users from spamming the button
-      $('#next').removeClass('next');
-      // Empty the EPG of its current contents
-      $('#programGuide').empty();
-      // Remove the half hours from the timebar
-      $('.half-hour').remove();
-      // Figure out how large the epg's scope is based off of screen size
-      hoursMins = klowd.findEPGSize();
-      // Find new time by adding time to current time
-      time = klowd.addTimeBlock(time, hoursMins["hours"], hoursMins["minutes"]);
-      // Run the setEPG method again with the new time, and total hours and minutes being displayed as arguments
-      klowd.setEPG(time, hoursMins["hours"], hoursMins["minutes"]);
-
-    },
-
-    // Function attached to the previous button that moves the epg backwards
-    removeTime: function(){
-      // Remove the class temporarrily to prevent users from spamming the button
-      $('#previous').removeClass('previous');
-      // Empty the EPG of its current contents
-      $('#programGuide').empty();
-      // Remove the half hours from the timebar
-      $('.half-hour').remove();
-      // Figure out how large the epg's scope is based off of the screen size
-      hoursMins = klowd.findEPGSize();
-      // Find new time by removing time to current time
-      time = klowd.removeTimeBlock(time, hoursMins["hours"], hoursMins["minutes"]);
-      // Run the setEPG method again with the new time, and total hours and minutes being displayed as arguments
-      klowd.setEPG(time, hoursMins["hours"], hoursMins["minutes"]);
-    },
-
     // On initialization
     init: function(){
+      epg = this;
       // Change the text of the date object to todays date
       $('.date').text(new Date().toString().substr(0,15));
       // Figure out the time right now
@@ -283,61 +277,104 @@ $('document').ready(function(){
       hoursMins = this.findEPGSize();
       // Set the EPG using the current time and the hours and minutes being displayed as arguments
       this.setEPG(time, hoursMins["hours"], hoursMins["minutes"]);
+
+      // Use Fetching data to prevent users from spamming the button while it's running
+      // Any function that talks with the API requires fetchingData to be false, and sets it true when it starts
+      // At the end of the function, after a certain amount of time, it sets fetchingData to false
+      var fetchingData = false;
       // Add the functionality to the next and previous button
-      $('.next').on('click', this.addTime);
-      $('.previous').on('click', this.removeTime);
+      $('#next').on('click', function(){
+          if(fetchingData != true){
+              fetchingData = true;
+            // Empty the EPG of its current contents
+            $('#programGuide').empty();
+            // Remove the half hours from the timebar
+            $('.half-hour').remove();
+            // Figure out how large the epg's scope is based off of screen size
+            hoursMins = epg.findEPGSize();
+            // Find new time by adding time to current time
+            time = epg.addTimeBlock(time, hoursMins["hours"], hoursMins["minutes"]);
+            // Run the setEPG method again with the new time, and total hours and minutes being displayed as arguments
+            epg.setEPG(time, hoursMins["hours"], hoursMins["minutes"]);
+            setTimeout(function(){
+              fetchingData = false;
+            }, 1000);
+          }
+        });
+      $('#previous').on('click', function(){
+        if(fetchingData != true){
+          fetchingData = true;
+          // Empty the EPG of its current contents
+          $('#programGuide').empty();
+          // Remove the half hours from the timebar
+          $('.half-hour').remove();
+          // Figure out how large the epg's scope is based off of the screen size
+          hoursMins = epg.findEPGSize();
+          // Find new time by removing time to current time
+          time = epg.removeTimeBlock(time, hoursMins["hours"], hoursMins["minutes"]);
+          // Run the setEPG method again with the new time, and total hours and minutes being displayed as arguments
+          epg.setEPG(time, hoursMins["hours"], hoursMins["minutes"]);
+          setTimeout(function(){
+            fetchingData = false;
+          }, 1000);
+        }
+      });
+      // If window resizes, make sure to refresh the EPG to the new size
+      $(window).resize(function(){
+        if(fetchingData != true){
+          fetchingData = true;
+          setTimeout(function(){
+            // Empty the EPG of its current contents
+            $('#programGuide').empty();
+            // Remove the half hours from the timebar
+            $('.half-hour').remove();
+            console.log('resize');
+            hoursMins = epg.findEPGSize();
+            epg.setEPG(time, hoursMins["hours"], hoursMins["minutes"]);
+            fetchingData = false;
+          }, 1000);
+        }
+      })
     },
 
-    setEPG: function(today, hours, minutes){
+    setEPG: function(time, hours, minutes){
 
       // Set 'this' as a variable so I can access it in the ajax
-      klowd = this;
+      var epg = this;
 
       // Determine ISO 8601 in Zulu time (What Gracenote Uses)
-      klowd.setTimeBar(today, hours, minutes);
+      epg.setTimeBar(time, hours, minutes);
 
       // If you're looking at the current time, you can't go back, so remove the previous button
-      if (today === klowd.findCorrectISOTime(new Date())){
+      if (time === epg.findCorrectISOTime(new Date())){
         $('#previous').hide();
       }
       else {
         $('#previous').show();
       }
-
       // Send request to gracenote
       $.ajax({
-        url: klowd.baseUrl,
+        url: epg.baseUrl,
         data: {
-          stationId: klowd.stationIds.toString(),
-          startDateTime: today,
-          api_key: klowd.apikey,
+          startDateTime: time,
+          api_key: epg.apikey,
         },
       })
       .done(function(data){
         // Fill the EPG with the data we just pulled
-        klowd.fillEPG(data, today, hours, minutes);
-        // Initialize tooltipster for the clickable information
-        $('.tooltip').tooltipster({
-        trigger: 'click',
-        contentAsHTML: true,
-        interactive: true,
-        functionReady: function(){
-            $('.change-channel').on( 'click', function(){
-            channelId = $(this).attr('channel-id');
-            $('.programs').removeClass('active');
-            $('.programs[channel-id="' + channelId +'"]').addClass('active');
-            klowd.activeStation = channelId;
-            $('.tooltip').tooltipster('hide');
-          });
-        }
+        epg.fillEPG(data, time, hours, minutes);
+        // Initialize tooltipster for the clickable information if screen is mobile
+        // Documentation for tooltipster: http://iamceege.github.io/tooltipster/
+        if(klowdjs.breakpoints.getBreakpoint() > 768){
+          $('.tooltip').tooltipster({
+            trigger: 'click',
+            contentAsHTML: true,
+            interactive: true,
+            });
+          }
       });
-
-      // Add classes back to the next and previous buttons so that they have the functionality of switching time slots
-      $('#next').addClass('next');
-      $('#previous').addClass('previous');
-    });
-  },
-}
+    },
+  }
 
   klowdEPG.init();
 

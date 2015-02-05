@@ -2,7 +2,7 @@ body {
   background: white;
 }
 
-.100-percent-width {
+.width-100-percent {
   width: 100%;
 }
 
@@ -22,6 +22,11 @@ body {
   background: black;
   float: left;
   color: white;
+}
+
+.image-container img{
+  display: block;
+  margin: auto;
 }
 
 .half-hour p {
@@ -68,6 +73,23 @@ body {
   color: black;
 }
 
+.stationInfo {
+  vertical-align: top;
+  margin: 0 auto;
+  width: 49%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+
+.station button {
+  width: 25%;
+}
+
+.station .stationInfo p {
+  font-size: 1em;
+  float: left;
+}
+
 .station p {
   display: inline-block;
   float: right;
@@ -84,4 +106,35 @@ body {
   border: 2px solid #000;
   background: #4c4c4c;
   color: #fff;
+}
+
+.width-25-percent {
+  width: 25%;
+}
+
+.width-15-percent {
+  width: 15%;
+}
+
+.width-100-percent {
+  /*max-width: 100%;*/
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.pushed-to-bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.centered-text-li {
+  line-height: 335%;
+}
+
+@media(max-height: 400px){
+  .centered-text-li {
+    line-height: 150%;
+  }
 }
